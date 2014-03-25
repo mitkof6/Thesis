@@ -1,0 +1,68 @@
+\documentclass[12pt, a4paper]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[english, greek]{babel}
+
+\usepackage[version=3]{mhchem}
+
+%Paragraph
+%\usepackage{indentfirst}
+\usepackage{parskip}
+\setlength{\parskip}{.5cm}
+
+%Graphics
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage[labelfont=bf]{caption}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+%Source code
+\usepackage{listings} %source code
+
+%Tables
+\usepackage{booktabs}
+%\usepackage{hhline}
+
+%Page
+\usepackage{fullpage}
+
+%Hyper reference
+\usepackage[unicode]{hyperref}
+
+%Math
+\usepackage{amsmath, amsthm, amssymb}
+%\usepackage{gfsartemisia-euler}
+
+%URL
+\usepackage{url}
+
+%Footnote
+\usepackage{threeparttablex}
+%\usepackage{footnote}
+
+%Commands
+\newcommand{\eng}[1]{\selectlanguage{english}#1\selectlanguage{greek}}
+\newcommand{\gre}[1]{\selectlanguage{greek}#1\selectlanguage{english}}
+
+\newcommand{\en}{\selectlanguage{english}}
+\newcommand{\gr}{\selectlanguage{greek}}
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\begin{document}
+
+\tableofcontents
+
+\include{kinect/kinect}
+
+\include{rigidbody/rigidbody}
+
+\bibliographystyle{amsplain}
+\bibliography{bibliography/bibliography}
+
+\end{document} 
