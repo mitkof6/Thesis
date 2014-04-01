@@ -20,15 +20,16 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=.7\textwidth]{rigidbody/fig/transofrmation.png}
-    \caption{Σχετικός μετασχηματισμός}
+    \caption{Σχετικός μετασχηματισμός\protect\footnotemark}
     \label{fig:transformation}
 \end{figure}
+\footnotetext{Εικόνες από το βιβλίο \cite{craig95}}
 
 Στις περιπτώσεις όπου έχουμε αλυσίδες από πλαίσια που ενώνονται με τους αντίστοιχους σχετικούς μετασχηματισμούς, μπορούμε να εκφράσουμε την σχετική θέση ενός πλαισίου πολλαπλασιάζοντας του αντίστοιχους μετασχηματισμούς. Όπως φαίνεται και στην εικόνα \ref{fig:transformation-chain} μπορεί να υπάρχουν εναλλακτικές διαδρομές που περιγράφουν την θέση ενός πλαισίου και οι μετασχηματισμοί που ισχύουν, μπορούν να περιγραφούν από τις εξισώσεις \ref{equ:chain}. Σε περίπτωση που υπάρχει κάποιος άγνωστος μετασχηματισμός, μπορεί κανείς να λύσει ως προς τον άγνωστο δοσμένου ότι γνωρίζει τους υπόλοιπους.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.7\textwidth]{rigidbody/fig/transformation-chain.png}
+    \includegraphics[width=.7\textwidth, height=.4\textheight]{rigidbody/fig/transformation-chain.png}
     \caption{Αλυσίδες μετασχηματισμού}
     \label{fig:transformation-chain}
 \end{figure}
@@ -55,9 +56,10 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=.8\textwidth]{rigidbody/fig/velocity.png}
-    \caption{Γενική περίπτωση κίνησης ενός σημείου}
+    \caption{Γενική περίπτωση κίνησης ενός σημείου\protect\footnotemark}
     \label{fig:velocity}
 \end{figure}
+\footnotetext{Εικόνα από το βιβλίο \cite{craig95}}
 
 Έστω ότι η γραμμική ταχύτητα του πλαισίου $\{Β\}$ σε σχέση με το $\{Α\}$ είναι $^AV_{BORG}$ και η γωνιακή ταχύτητα είναι $^A\Omega_{BORG}$. Η γωνιακή ταχύτητα είναι ένα διάνυσμα, όπου η διεύθυνση εκφράζει τον άξονα περιστροφής, ενώ το μέτρο του την γωνία. Επίσης το σημείο $Q$ κινείται με ταχύτητα $^BV_Q$. Η γενική εξίσωση που περιγράφει την κίνηση του σημείου $Q$ δίνεται από την εξίσωση \ref{equ:q-velocity}.
 
@@ -134,9 +136,10 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=.8\textwidth]{rigidbody/fig/velocity-transfer.png}
-    \caption{Μετάδοση της ταχύτητας από άρθρωση σε άρθρωση}
+    \caption{Μετάδοση της ταχύτητας από άρθρωση σε άρθρωση\protect\footnotemark}
     \label{fig:velocity-transfer}
 \end{figure}
+\footnotetext{Εικόνα από το βιβλίο \cite{craig95}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Αντίστροφη Κινηματική}
@@ -161,10 +164,11 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.8\textwidth]{rigidbody/fig/ik-multiple-solutions.png}
-    \caption{Πολλαπλότητα λύσεων}
+    \includegraphics[width=.7\textwidth, height=.29\textheight]{rigidbody/fig/ik-multiple-solutions.png}
+    \caption{Πολλαπλότητα λύσεων\protect\footnotemark}
     \label{fig:ik-multiple-solutions}
 \end{figure}
+\footnotetext{Εικόνα από το βιβλίο \cite{craig95}}
 
 Ένα σημαντικό πρόβλημα που έχει να κάνει με τις δυνατότητες του συγκεκριμένου συστήματος καταγραφής, είναι ότι η πληροφορία που σου παρέχει μπορεί να μην αρκεί για να περιγράψει σωστά την διάταξη. Δηλαδή, αν υποθέσουμε ότι έχουμε μια άρθρωση με έξι βαθμούς ελευθερίας (τρεις περιστροφές και τρεις μετατοπίσεις), τότε για να επιλυθεί το σύστημα απαιτούνται τουλάχιστον τρία σημεία πάνω στο τμήμα, που να μην είναι συγγραμμικά μεταξύ τους. Για αυτό το λόγο, τα καλά συστήματα, όπως είναι το \eng{Vicon}, καταγράφουν πολλαπλές θέσεις σε κάθε τμήμα του σώματος.
 
@@ -192,9 +196,10 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=.7\textwidth]{rigidbody/fig/force-balance.png}
-    \caption{Διάγραμμα ελευθέρου σώματος}
+    \caption{Διάγραμμα ελευθέρου σώματος\protect\footnotemark}
     \label{fig:force-balance}
 \end{figure}
+\footnotetext{Εικόνα από το βιβλίο \cite{craig95}}
 
 Η πρώτη αναδρομή περιγράφεται από τις εξής σχέσεις για $i : 0 \rightarrow n-1$:
 

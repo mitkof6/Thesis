@@ -16,9 +16,10 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=.8\textwidth]{kinect/fig/kinect-characteristics.png}
-    \caption{Ο αισθητήρας}
+    \caption{Ο αισθητήρας\protect\footnotemark}
     \label{fig:kinect-characteristics}
 \end{figure}
+\footnotetext{Εικόνα από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/jj131033.aspx}}}
 
 Ο αισθητήρας βάθους αποτελείται από ένα υπέρυθρο προβολέα λέιζερ σε συνδυασμό με ένα μονόχρωμο αισθητήρα \eng{CMOS}, ο οποίος καταγράφει δεδομένα βίντεο σε \eng{3D} κάτω από οποιεσδήποτε συνθήκες φωτισμού. Η τεχνολογία του λογισμικού επιτρέπει την προηγμένη αναγνώριση χειρονομιών, αναγνώριση προσώπου και αναγνώριση φωνής. Σύμφωνα με τις πληροφορίες που παρέχονται στους εμπόρους λιανικής πώλησης, το \eng{Kinect} είναι σε θέση να εντοπίζει ταυτόχρονα έως έξι άτομα. Ο χάρτης βάθους που δημιουργείται από τον αισθητήρα βάθους είναι στην ουσία μία εικόνα, η οποία χρησιμοποιώντας διαφορετικές αποχρώσεις χρώματος από λευκό έως μπλε ανάλογα με την απόσταση τον αντικειμένων που 'βλέπει'. Αν σκεφτεί κανείς το μικρό σχετικό κόστος με τις δυνατότητες και την πληροφορία που σου παρέχει το \eng{Kinect}, μπορούν να αναπτυχθούν πολύ ενδιαφέρουσες εφαρμογές \cite{jean13}. Στον πίνακα \ref{tab:sensor-characteristics} συνοψίζονται τα βασικά τεχνικά χαρακτηριστικά λειτουργίας.
 
@@ -43,10 +44,11 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.9\textwidth]{kinect/fig/kinect-operation-mode.png}
-    \caption{Περιοχή λειτουργίας}
+    \includegraphics[width=.8\textwidth, height=.35\textheight]{kinect/fig/kinect-operation-mode.png}
+    \caption{Περιοχή λειτουργίας\protect\footnotemark}
     \label{fig:kinect-operation-mode}
 \end{figure}
+\footnotetext{Εικόνα από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/hh973071.aspx}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Αλγόριθμος Ανίχνευσης Σκελετού}
@@ -56,18 +58,20 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=.9\textwidth]{kinect/fig/kinect-skeleton-algorithm.png}
-    \caption{Διαδικασία εξαγωγής της θέσης των αρθρώσεων}
+    \caption{Διαδικασία εξαγωγής της θέσης των αρθρώσεων\protect\footnotemark}
     \label{fig:kinect-skeleton-algorithm}
 \end{figure}
+\footnotetext{Εικόνα από την δημοσίευση \cite{shotton11}}
 
 Ο αλγόριθμος αρχικά εκτιμά τις θέσεις των αρθρώσεων με βάση την εικόνας βάθους, μαντεύοντας για κάθε εικονοστοιχείο πόσο πιθανό είναι να βρίσκεται μια άρθρωση στο συγκεκριμένο σημείο, δίνοντας ένα επίπεδο εμπιστοσύνης. Έπειτα επιλέγει το σκελετό που είναι πιο πιθανό να δώσει αυτές τις ετικέτες στις αρθρώσεις για τα επίπεδα εμπιστοσύνης. Αλλά πριν μπορέσει να γίνει αυτό, ο αλγόριθμος πρέπει να κάνει ακριβείς εικασίες για τη θέση των αρθρώσεων. Αρχικά, συλλέχθηκαν εικόνες βάθους για τις οποίες ήταν ήδη γνωστή η θέση των αρθρώσεων, για να μπορεί να γίνει η εκπαίδευση του αλγορίθμου και συντέθηκαν επιπλέον εικόνες με διαφορετικά χαρακτηριστικά σώματος όπως φαίνεται στην εικόνα \ref{fig:kinect-data-synthesis}. Η αναγνώριση βασίζεται στην θεωρία των τυχαίων δέντρων απόφασης (\eng{randomized decision forest}).
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=.9\textwidth]{kinect/fig/kinect-data-synthesis.png}
-    \caption{Σύνθεσης των εικόνων βάθους για την εκπαίδευση του αλγορίθμου}
+    \caption{Σύνθεσης των εικόνων βάθους για την εκπαίδευση του αλγορίθμου\protect\footnotemark}
     \label{fig:kinect-data-synthesis}
 \end{figure}
+\footnotetext{Εικόνα από την δημοσίευση \cite{shotton11}}
 
 Το πρόβλημα είναι πολύ δύσκολο και εξαρτάται από πολλούς παράγοντες, όπως είναι το φως, η διαφοροποίηση των ανθρώπων, οι ποικίλες στάσεις, το χρώμα, το δίσημο και από παρεμπόδιση τμημάτων του σώματος που δεν είναι ορατά στον αισθητήρα (\eng{occlusion}). Ο αλγόριθμος επιτυγχάνει πολύ υψηλά ποσοστά ανίχνευσης με μεγάλη ακρίβεια. Είναι ταχύτατος, γιατί από την φύση του μπορεί να εκτελεστεί παράλληλα, με αποτέλεσμα η υλοποίηση του να γίνει στο υλικό εσωτερικά και όχι από λογισμικό.
 
@@ -87,10 +91,11 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[]{kinect/fig/microsoft-skeleton.png}
-    \caption{Σκελετικό σύστημα της \eng{Microsoft}}
+    \includegraphics[height=.35\textheight]{kinect/fig/microsoft-skeleton.png}
+    \caption{Σκελετικό σύστημα της \eng{Microsoft}\protect\footnotemark}
     \label{fig:microsoft-sdk-skeleton}
 \end{figure}
+\footnotetext{Εικόνα από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/hh973077.aspx}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Εναλλακτικά Εργαλεία}
@@ -99,10 +104,11 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.8\textwidth]{kinect/fig/openni-framework.jpg}
-    \caption{Αρχιτεκτονική του \eng{OpenNI}}
+    \includegraphics[width=.7\textwidth, height=.3\textheight]{kinect/fig/openni-framework.jpg}
+    \caption{Αρχιτεκτονική του \eng{OpenNI}\protect\footnotemark}
     \label{fig:openni-framework}
 \end{figure}
+\footnotetext{Εικόνα από την ιστοσελίδα \\ \eng{\url{http://electronicdesign.com/embedded/how-microsoft-s-primesense-based-kinect-really-works}}}
 
 \begin{figure}[H]
     \centering
@@ -154,9 +160,10 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=.8\textwidth]{kinect/fig/kinect-joints.png}
-    \caption{Σύστημα αρθρώσεων}
+    \caption{Σύστημα αρθρώσεων\protect\footnotemark}
     \label{fig:kinect-joints}
 \end{figure}
+\footnotetext{Εικόνα από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/jj131025.aspx}}}
 
 Πρέπει να διευκρινιστεί ότι τα δεδομένα δεν έρχονται περιοδικά σε ντετερμινιστικές χρονικές στιγμές, αλλά έχουν μια απόκλιση που οφείλεται κυρίως στο \eng{software} και στις εσωτερικές καθυστερήσεις. Για το λόγο αυτό είναι χρήσιμο να γίνει η μέτρηση της χρονικής στιγμής που έρχονται και αποθηκεύονται τα δεδομένα να χρησιμοποιηθεί στα μετέπειτα στάδια της ανάλυσης. Μια άλλη παρατήρηση είναι ότι τα δεδομένα βρίσκονται στο σύστημα συντεταγμένων με αρχή των αξόνων το \eng{Kinect} και ανάλογα το εργαλείο που θα χρησιμοποιηθεί στα μετέπειτα στάδια της επεξεργασίας θα πρέπει να γίνει η κατάλληλη μετατροπή συστήματος συντεταγμένων.
 
@@ -177,8 +184,9 @@
         \caption{Εκτίμηση λόγω θορύβου}
         \label{fig:hand2}
     \end{subfigure}
-    \caption{Πρόβλημα εκτίμησης θέσης λόγω θορύβου}
+    \caption{Πρόβλημα εκτίμησης θέσης λόγω θορύβου\protect\footnotemark}
 \end{figure}
+\footnotetext{Εικόνα από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/jj131429.aspx}}}
 
 Για την αντιμετώπιση του προβλήματος μπορούν να υλοποιηθούν απλές τεχνικές φιλτραρίσματος και να ελαχιστοποιηθεί ο θόρυβος. Πρέπει κανείς να ξεχωρίσει κάποια κριτήρια που είναι το ποσοστό της εξομάλυνσης των πολύ απότομων κινήσεων, την καθυστέρηση που εισάγεται από την αλλαγή που προκαλεί η φάση του φίλτρου και το αν η εφαρμογή είναι πραγματικού χρόνου (\eng{online}) ή μην πραγματικού χρόνου (\eng{offline}).
 
@@ -189,9 +197,10 @@
 \begin{figure}[h]
     \centering
     \includegraphics[width=.8\textwidth]{kinect/fig/filter-latency.png}
-    \caption{Εξομάλυνση και καθυστέρηση ακολουθίας μετά το φιλτράρισμα}
+    \caption{Εξομάλυνση και καθυστέρηση ακολουθίας μετά το φιλτράρισμα\protect\footnotemark}
     \label{fig:filter-latency}
 \end{figure}
+\footnotetext{Εικόνα από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/jj131429.aspx}}}
 
 Για παράδειγμα μια απλή τεχνική για την αφαίρεση του θορύβου λόγω \eng{jitter} βασίζεται στην απλή σχέση αναδρομής \ref{equ:jitter-removal}.
 
