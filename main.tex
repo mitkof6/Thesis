@@ -46,6 +46,10 @@
 \usepackage{threeparttablex}
 %\usepackage{footnote}
 
+%Text
+\usepackage[normalem]{ulem}
+\usepackage{adjustbox}
+
 %Commands
 
 \newcommand{\eng}[1]{\selectlanguage{english}#1\selectlanguage{greek}}
@@ -58,13 +62,25 @@
 
 \begin{document}
 
+\include{frontpage/frontpage}
+
+\include{abstract/abstract}
+
+\include{acknowledgements/acknowledgements}
+
 \tableofcontents
+
+\listoffigures
+
+\include{introduction/introduction}
 
 \include{kinect/kinect}
 
 \include{rigidbody/rigidbody}
 
 \include{neuromusculoskeletal/neuromusculoskeletal}
+
+\include{results/results}
 
 \bibliographystyle{acm}
 \bibliography{bibliography/bibliography}
