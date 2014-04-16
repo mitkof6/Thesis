@@ -5,7 +5,9 @@
 \usepackage[utf8x]{inputenc}
 \usepackage[english, greek]{babel}
 
-\usepackage[version=3]{mhchem}
+%Fonts
+%\usepackage[version=3]{mhchem}
+\usepackage{kerkis}
 
 %Paragraph
 %\usepackage{indentfirst}
@@ -34,6 +36,13 @@
 
 %Hyper reference
 \usepackage[unicode]{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor = {blue!100!black},
+    citecolor = {blue!100!black},
+    urlcolor = {blue!100!black}
+}
 
 %Math
 \usepackage{amsmath, amsthm, amssymb}
@@ -80,7 +89,9 @@
 
 \include{neuromusculoskeletal/neuromusculoskeletal}
 
-\include{results/results}
+\include{methods/methods}
+
+%\include{results/results}
 
 \bibliographystyle{acm}
 \bibliography{bibliography/bibliography}

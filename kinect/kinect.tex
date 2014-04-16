@@ -4,7 +4,7 @@
 Στο παρόν κεφάλαιο θα γίνει μια σύντομη ανασκόπηση των χαρακτηριστικών του αισθητήρα. Θα εξηγήσουμε πως δουλεύει ο αλγόριθμος ανίχνευσης του σκελετού που είναι υλοποιημένος εσωτερικά στο \eng{Kinect} και πως μπορούμε να έχουμε πρόσβαση στις τροχαίες των αρθρώσεων, που είναι απαραίτητες για να γίνει η καταγραφή της κίνησης. Θα αναφέρουμε εναλλακτικά εργαλεία που μπορεί να χρησιμοποιήσει κανείς και θα κάνουμε μια σύγκριση μεταξύ τους. Έπειτα θα περάσουμε στο κομμάτι των μετρήσεων και στο πώς μπορούμε να βελτιώσουμε την ποιότητα τους. Τέλος θα γίνει επίδειξη του συστήματος που υλοποιήθηκε για την καταγραφή της βάδισης.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Αισθητήρας}
+\section{\texorpdfstring{Η Συσκευή \eng{Kinect}}{}}
 
 Ο αισθητήρας της \eng{Microsoft} που πρωτοεμφανίστηκε το 2009 ήταν μια καινοτομία που αρχικά προοριζόταν για την βιομηχανία των παιχνιδιών, αλλά λόγω των πολύ μεγάλων δυνατοτήτων και σχετικά χαμηλής τιμής σύντομα μπήκε στο στόχαστρο της ανοιχτής κοινότητας, η οποία κατάφερε να το \lq χακάρει\rq \; και να διαθέσει το πρώτο \eng{API} για πρόσβαση στην συσκευή. Με αποτέλεσμα μετά από λίγο καιρό να βγάλει και η \eng{Microsoft} το αντίστοιχο \eng{API}.
 
@@ -16,7 +16,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=.8\textwidth]{kinect/fig/kinect-characteristics.png}
-    \caption{Ο αισθητήρας\protect\footnotemark}
+    \caption{Δυνατότητες του αισθητήρα \eng{Kinect}\protect\footnotemark}
     \label{fig:kinect-characteristics}
 \end{figure}
 \footnotetext{Εικόνα από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/jj131033.aspx}}}
@@ -45,7 +45,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=.8\textwidth, height=.35\textheight]{kinect/fig/kinect-operation-mode.png}
-    \caption{Περιοχή λειτουργίας\protect\footnotemark}
+    \caption{Περιγραφή περιοχών λειτουργίας\protect\footnotemark}
     \label{fig:kinect-operation-mode}
 \end{figure}
 \footnotetext{Εικόνα από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/hh973071.aspx}}}
@@ -58,7 +58,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=.9\textwidth]{kinect/fig/kinect-skeleton-algorithm.png}
-    \caption{Διαδικασία εξαγωγής της θέσης των αρθρώσεων\cite{shotton11}}
+    \caption{Διαδικασία εξαγωγής των αρθρώσεων\cite{shotton11}}
     \label{fig:kinect-skeleton-algorithm}
 \end{figure}
 %\footnotetext{Εικόνα από την δημοσίευση \cite{shotton11}}
@@ -68,7 +68,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=.9\textwidth]{kinect/fig/kinect-data-synthesis.png}
-    \caption{Σύνθεσης των εικόνων βάθους για την εκπαίδευση του αλγορίθμου\cite{shotton11}}
+    \caption{Συνθέσεις των εικόνων βάθους για την εκπαίδευση του αλγορίθμου\cite{shotton11}}
     \label{fig:kinect-data-synthesis}
 \end{figure}
 %\footnotetext{Εικόνα από την δημοσίευση \cite{shotton11}}
@@ -83,7 +83,7 @@
 Υπάρχουν πολλές εναλλακτικές λύσεις για το ποιο εργαλείο μπορεί να χρησιμοποιηθεί για πρόσβαση στα δεδομένα που σου παρέχει το \eng{Kinect}. Παρακάτω θα αναφερθούν δύο εργαλεία: το προκαθορισμένο \eng{SDK} της \eng{Microsoft} και το εναλλακτικό της \eng{OpenNI}. Και τα δύο είναι εξίσου καλά και χρησιμοποιούνται από πολλούς χρήστες. Τα εργαλεία σου παρέχουν επιπλέον δυνατότητες για πιο προχωρημένες εφαρμογές όπως είναι η αναγνώριση ομιλίας, αναγνώριση έκφρασης προσώπου, τρισδιάστατη ανακατασκευή και πολλά άλλα. Παρακάτω αναφέρονται κάποια βασικά χαρακτηριστικά που μας ενδιαφέρουν για το πρόβλημα που θέλουμε να λύσουμε.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Προκαθορισμένο Εργαλείο}
+\subsection{\texorpdfstring{Προκαθορισμένο Εργαλείο της \eng{Microsoft}}{}}
 
 Το εργαλείο της \eng{Microsoft} είναι δωρεάν και παρέχει πλούσιο ρεπερτόριο από συναρτήσεις για πρόσβαση στην συσκευή. Είναι αποκλειστικά για \eng{Windows} και δεν μπορεί να χρησιμοποιηθεί από αλλά λειτουργικά. Οι γλώσσες προγραμματισμού που χρησιμοποιούνται είναι η \eng{C++} και η \eng{C\#}. Υπάρχει δυνατότητα συνεργασία με άλλες βιβλιοθήκες, όπως είναι η \eng{XNA} και το \eng{DirectX}.
 
@@ -92,20 +92,20 @@
 \begin{figure}[H]
     \centering
     \includegraphics[height=.35\textheight]{kinect/fig/microsoft-skeleton.png}
-    \caption{Σκελετικό σύστημα της \eng{Microsoft}\protect\footnotemark}
+    \caption{Σκελετικό σύστημα που παρέχει το εργαλείο της \eng{Microsoft}\protect\footnotemark}
     \label{fig:microsoft-sdk-skeleton}
 \end{figure}
 \footnotetext{Εικόνα από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/hh973077.aspx}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Εναλλακτικά Εργαλεία}
+\subsection{\texorpdfstring{Εναλλακτικό Εργαλείο της \eng{OpenNI}}{}}
 
 Το εναλλακτικό εργαλείο είναι το \eng{OpenNI}. Εκτός από το \eng{Kinect} δίνει την δυνατότητα πρόσβασης και σε άλλους αισθητήρες με τον ίδιο τρόπο και έχει μια ξεκάθαρη αρχιτεκτονική, που διευκολύνει τον προγραμματιστή όπως φαίνεται στην εικόνα \ref{fig:openni-framework}. Όμοια με το \eng{SDK} της \eng{Microsoft} η \eng{OpenNI} σου παρέχει πλούσιο ρεπερτόριο από αλγορίθμους και εφαρμογές. Είναι ανοιχτού κώδικα, υπάρχει υλοποίηση όσο στα \eng{Windows}, έτσι και στο \eng{Linux} (\eng{cross platform}). Οι κύριες γλώσσες προγραμματισμού  που υποστηρίζονται από το \eng{OpenNI} είναι η \eng{C++}, η \eng{Java} και \eng{Python}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=.7\textwidth, height=.3\textheight]{kinect/fig/openni-framework.jpg}
-    \caption{Αρχιτεκτονική του \eng{OpenNI}\protect\footnotemark}
+    \caption{Αρχιτεκτονική της βιβλιοθήκης της \eng{OpenNI}\protect\footnotemark}
     \label{fig:openni-framework}
 \end{figure}
 \footnotetext{Εικόνα από την ιστοσελίδα \\ \eng{\url{http://electronicdesign.com/embedded/how-microsoft-s-primesense-based-kinect-really-works}}}
@@ -113,7 +113,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=.5\textwidth]{kinect/fig/openni-skeleton.png}
-    \caption{Σκελετικό σύστημα του \eng{OpenNI}}
+    \caption{Σκελετικό σύστημα που προσφέρει το εργαλείο της \eng{OpenNI}}
     \label{fig:openni-skeleton}
 \end{figure}
 
@@ -136,7 +136,7 @@
         Ποιότητα εγχειριδίων τεκμηρίωσης  & Καλή & Μέτρια\\
         \bottomrule
     \end{tabular}
-    \captionof{table}{Σύγκριση εναλλακτικών εργαλείων}
+    \captionof{table}{Σύγκριση βασικών χαρακτηριστικών μεταξύ των δύο εργαλείων}
     \label{tab:openni-microsoft}
 \end{center}
 
@@ -160,7 +160,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=.8\textwidth]{kinect/fig/kinect-joints.png}
-    \caption{Σύστημα αρθρώσεων\protect\footnotemark}
+    \caption{Το σύστημα αρθρώσεων που χρησιμοποιήθικαι\protect\footnotemark}
     \label{fig:kinect-joints}
 \end{figure}
 \footnotetext{Εικόνα από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/jj131025.aspx}}}
@@ -176,12 +176,12 @@
     \centering
     \begin{subfigure}[b]{.4\textwidth}
         \includegraphics[width=\textwidth]{kinect/fig/hand1.png}
-        \caption{Ακριβή εκτίμηση}
+        \caption{Βέλτιστη εκτίμηση της θέσης του χεριού}
         \label{fig:hand1}
     \end{subfigure} ~
     \begin{subfigure}[b]{.4\textwidth}
         \includegraphics[width=\textwidth]{kinect/fig/hand2.png}
-        \caption{Εκτίμηση λόγω θορύβου}
+        \caption{Εκτίμηση της θέσης του χεριού λόγω θορύβου}
         \label{fig:hand2}
     \end{subfigure}
     \caption{Πρόβλημα εκτίμησης θέσης λόγω θορύβου\protect\footnotemark}
@@ -197,7 +197,7 @@
 \begin{figure}[h]
     \centering
     \includegraphics[width=.8\textwidth]{kinect/fig/filter-latency.png}
-    \caption{Εξομάλυνση και καθυστέρηση ακολουθίας μετά το φιλτράρισμα\protect\footnotemark}
+    \caption{Εξομάλυνση και καθυστέρηση της ακολουθίας μετά το φιλτράρισμα\protect\footnotemark}
     \label{fig:filter-latency}
 \end{figure}
 \footnotetext{Εικόνα από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/jj131429.aspx}}}
@@ -265,7 +265,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=.9\textwidth]{kinect/fig/motion-capture.png}
-    \caption{Σύστημα καταγραφής}
+    \caption{Επίδειξη του συστήματος καταγραφής της κίνησης που υλοποιήθηκε}
     \label{fig:motion-capture}
 \end{figure}
 
