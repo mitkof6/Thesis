@@ -1,7 +1,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Νευρομυοσκελετικό Σύστημα}
+\chapter{Μυοσκελετικό Σύστημα}
 
-Σε αυτό το κεφάλαιο παρουσιάζουμε την διαδικασία της ορθής δυναμικής σε νευρομυοσκελετικά μοντέλα. Στόχος είναι να εκτιμηθούν οι δυνάμεις που παράγονται από τους μύες, που μετατρέπονται σε  ροπές, οι οποίες με την σειρά τους σε κίνηση που προήρθε από την νευρική διέγερση των μυών. Η παραπάνω διαδικασία μπορεί να χωριστεί σε τέσσερα βήματα, την μυϊκή ενεργοποίση (\eng{muscle activation dynamics}), την μυϊκή συστολή (\eng{muscle contraction dynamics}), την μυοσκελετική γεωμετρία και τέλος την εξίσωσης της κίνησης, η οποία επιτρέπει την μετατροπή της ροπής των αρθρώσεων σε κίνηση.
+Σε αυτό το κεφάλαιο παρουσιάζουμε την διαδικασία της δυναμικής σε μυοσκελετικό μοντέλα. Στόχος είναι να εκτιμηθούν οι δυνάμεις που παράγονται από τους μύες, που μετατρέπονται σε  ροπές, οι οποίες με την σειρά τους σε κίνηση που προέρχεται από την νευρική διέγερση των μυών. Η παραπάνω διαδικασία μπορεί να χωριστεί σε τέσσερα βήματα, την μυϊκή ενεργοποίση (\eng{muscle activation dynamics}), την μυϊκή συστολή (\eng{muscle contraction dynamics}), την μυοσκελετική γεωμετρία και τέλος την εξίσωσης της κίνησης, η οποία επιτρέπει την μετατροπή της ροπής των αρθρώσεων σε κίνηση. Η διαδικασία περιγράφεται εποπτικά από την εικόνα \ref{fig:muscle-excitation-force}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{musculoskeletal/fig/muscle-excitation-force.png}
+    \caption{Στάδια από την διέγερση έως την παραγωγή της κίνησης\cite{erdemir07}}
+    \label{fig:muscle-excitation-force}
+\end{figure}
+
+Στο παρόν κεφάλαιο θα ξεκινήσουμε με μια εισαγωγή στην φυσιολογία του μυ. Στην συνέχει θα γίνει ανάλυση της δυναμικής συμπεριφοράς της ενεργοποίησης και θα δοθεί μια μαθηματική διατύπωση. Έπειτα θα γίνει εισαγωγή στο μοντέλο του μυ και συγκεκριμένα στα \eng{Hill-Type} μοντέλα. Τέλος θα δοθεί εξήγηση πώς η τοποθεσία του μυ επηρεάζει την δυναμική του συμπεριφορά και πως αυτό μοντελοποιείται.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{H Φυσιολογία του Μυ}
@@ -13,25 +22,24 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.7\textwidth]{neuromusculoskeletal/fig/muscle-fysiology.png}
+    \includegraphics[width=.7\textwidth, height=0.4\textheight]{musculoskeletal/fig/muscle-fysiology.png}
     \caption{Σκελετικός μυς: ανατομική περιγραφή\protect\footnotemark}
     \label{fig:muscle-fysiology}
 \end{figure}
 
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.7\textwidth, height=0.5\textheight]{neuromusculoskeletal/fig/muscle-fysiology2.png}
+    \includegraphics[width=.7\textwidth, height=0.5\textheight]{musculoskeletal/fig/muscle-fysiology2.png}
     \caption{Δομή και συσταλτικός μηχανισμός του φυσιολογικού σκελετικού μυός\protect\footnotemark}
     \label{fig:muscle-fysiology2}
 \end{figure}
 \footnotetext{Εικόνα από το βιβλίο \eng{Travell \& Simons} 1999}
 
-Τo σαρκομέριο είναι η συσταλτή μονάδα του μυϊκού ινιδίου και αποτελείται από επικαλυπτόμενες εγκάρσιες γέφυρες ακτίνης και μυοσίνης. Το σαρκομέριο δίνει την δυνατότητα στον μυ να συσπάται και να χαλαρώνει. Όταν ο μυς συσπάται, τα λεπτά νημάτια ακτίνης και μυοσίνης ολισθαίνουν μεταξύ τους και ο μυς βραχύνεται. Όταν ο μυς χαλαρώνει, οι εγκάρσιες γέφυρες ολισθαίνουν ήπια και ξεχωριστά, και ο μυς επιστρέφει στο μήκος ηρεμίας.
+Το σαρκομέριο είναι η συσταλτή μονάδα του μυϊκού ινιδίου και αποτελείται από επικαλυπτόμενες εγκάρσιες γέφυρες ακτίνης και μυοσίνης. Το σαρκομέριο δίνει την δυνατότητα στον μυ να συσπάται και να χαλαρώνει. Όταν ο μυς συσπάται, τα λεπτά νημάτια ακτίνης και μυοσίνης ολισθαίνουν μεταξύ τους και ο μυς βραχύνεται. Όταν ο μυς χαλαρώνει, οι εγκάρσιες γέφυρες ολισθαίνουν ήπια και ξεχωριστά, και ο μυς επιστρέφει στο μήκος ηρεμίας.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.7\textwidth, height=0.6\textheight]{neuromusculoskeletal/fig/muscle-fysiology3.png}
+    \includegraphics[width=.7\textwidth, height=0.6\textheight]{musculoskeletal/fig/muscle-fysiology3.png}
     \caption{Σαρκοπλασματικό δίκτυο\protect\footnotemark}
     \label{fig:muscle-fysiology3}
 \end{figure}
@@ -49,7 +57,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.8\textwidth]{neuromusculoskeletal/fig/muscle-fysiology4.png}
+    \includegraphics[width=.8\textwidth]{musculoskeletal/fig/muscle-fysiology4.png}
     \caption{Κινητικοί νευρώνες του νωτιαίου μυελού\protect\footnotemark}
     \label{fig:muscle-fysiology4}
 \end{figure}
@@ -61,7 +69,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.8\textwidth]{neuromusculoskeletal/fig/muscle-fysiology5.png}
+    \includegraphics[width=.8\textwidth]{musculoskeletal/fig/muscle-fysiology5.png}
     \caption{Κινητική μονάδα (μυϊκή άτρακτος)}
     \label{fig:muscle-fysiology5}
 \end{figure}
@@ -114,12 +122,12 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[Η]{.5\textwidth}
-        \includegraphics[width=\textwidth]{neuromusculoskeletal/fig/simple-muscle-model.png}
+        \includegraphics[width=\textwidth]{musculoskeletal/fig/simple-muscle-model.png}
         \caption{Απλοποιημένο μοντέλο\cite{millard13}}
         \label{fig:simple-mascle-model}
     \end{subfigure} ~
     \begin{subfigure}[Η]{.4\textwidth}
-        \includegraphics[width=\textwidth]{neuromusculoskeletal/fig/muscle-model.png}
+        \includegraphics[width=\textwidth]{musculoskeletal/fig/muscle-model.png}
         \caption{Μαθηματικό μοντέλο\cite{erdemir07}}
         \label{fig:muscle-model}
     \end{subfigure}
@@ -133,7 +141,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.5\textwidth, height=.35\textheight]{neuromusculoskeletal/fig/active-force-legnth.png}
+    \includegraphics[width=.5\textwidth, height=.35\textheight]{musculoskeletal/fig/active-force-legnth.png}
     \caption{Καμπύλη δύναμη-μήκους για διαφορετικές τιμές ενεργοποιήσης\cite{buchanan04}}
     \label{fig:active-force-legnth}
 \end{figure}
@@ -141,7 +149,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.6\textwidth]{neuromusculoskeletal/fig/force-velocity.png}
+    \includegraphics[width=.6\textwidth]{musculoskeletal/fig/force-velocity.png}
     \caption{Καμπύλη δύναμη-ταχύτητας}
     \label{fig:force-velocity}
 \end{figure}
@@ -204,7 +212,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.6\textwidth, height=.30\textheight]{neuromusculoskeletal/fig/muscle-skeleton-torque.png}
+    \includegraphics[width=.6\textwidth, height=.30\textheight]{musculoskeletal/fig/muscle-skeleton-torque.png}
     \caption{Συσχέτιση παραγόμενης δύναμης από τον μυ με ροπές στις αρθρώσεις\cite{erdemir07}}
     \label{fig:force-torques}
 \end{figure}
