@@ -59,8 +59,26 @@
 \usepackage[normalem]{ulem}
 \usepackage{adjustbox}
 
-%Commands
+%headings
+\usepackage{fancyhdr}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE, RO]{\thepage}
+\fancyhead[LO]{\itshape\nouppercase{\rightmark}}
+\fancyhead[RE]{\itshape\nouppercase{\leftmark}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\headsep}{10pt}
 
+%layout
+%\usepackage{fullpage}
+%\usepackage{geometry}
+%\geometry{bindingoffset=1cm}
+%\geometry{textwidth=390pt}
+
+%Commands
 \newcommand{\eng}[1]{\selectlanguage{english}#1\selectlanguage{greek}}
 \newcommand{\gre}[1]{\selectlanguage{greek}#1\selectlanguage{english}}
 
@@ -73,25 +91,47 @@
 
 \include{frontpage/frontpage}
 
+\thispagestyle{empty}
+
 \include{abstract/abstract}
+
+\thispagestyle{empty}
 
 \include{acknowledgements/acknowledgements}
 
+\thispagestyle{empty}
+
 \tableofcontents
+
+\thispagestyle{empty}
 
 \listoffigures
 
+\thispagestyle{empty}
+
 \include{introduction/introduction}
+
+\thispagestyle{empty}
 
 \include{kinect/kinect}
 
+\thispagestyle{empty}
+
 \include{rigidbody/rigidbody}
+
+\thispagestyle{empty}
 
 \include{musculoskeletal/musculoskeletal}
 
+\thispagestyle{empty}
+
 \include{methods/methods}
 
-%\include{results/results}
+\thispagestyle{empty}
+
+\include{results/results}
+
+\thispagestyle{empty}
 
 \bibliographystyle{acm}
 \bibliography{bibliography/bibliography}
