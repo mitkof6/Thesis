@@ -350,19 +350,19 @@
 \subsection{Υλοποίηση}
 \begin{frame}
 \frametitle{Πρόγραμμα καταγραφής}
-    
+
     \only<1>{
     \begin{figure}[t]
         \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/motion-capture.png}
     \end{figure}
     }
-    
+
     \only<2>{
     \begin{figure}[t]
         \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/motion-capture-class-diagram.png}
     \end{figure}
     }
-    
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -554,9 +554,98 @@
 \section{Αποτελέσματα}
 \frame{\tableofcontents[currentsection]}
 
+\subsection{Σύστημα Καταγραφής}
 \begin{frame}
-\frametitle{Αποτελέσματα}
+\frametitle{Μορφομετρικά Χαρακτηριστικά}
+    
+    \only<1>{
+    \begin{figure}[t]
+        \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/subject01-segments.png}
+    \end{figure}
+    
+    \begin{center}
+        \alert<1>{$std_{min} = 0.0030m, std_{max} = 0.0182m$}
+    \end{center}
+    }
+    
+    \only<2>{
+    \begin{figure}[t]
+        \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/subject02-segments.png}
+    \end{figure}
+    
+    \begin{center}
+        \alert<2>{$std_{min} = 0.0.0019m, std_{max} = 0.0146m$}
+    \end{center}
+    }
+    
+\end{frame}
 
+\begin{frame}
+\frametitle{Φιλτράρισμα}
+
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{tabular}{cc}
+            \includegraphics[height = 0.23\textheight, keepaspectratio]{fig/filter0-x.png} & \includegraphics[height = 0.23\textheight, keepaspectratio]{fig/filter3-x.png}\\
+            \includegraphics[height = 0.23\textheight, keepaspectratio]{fig/filter0-y.png} & \includegraphics[height = 0.23\textheight, keepaspectratio]{fig/filter3-y.png}\\
+            \includegraphics[height = 0.23\textheight, keepaspectratio]{fig/filter0-z.png} & \includegraphics[height = 0.23\textheight, keepaspectratio]{fig/filter3-z.png}\\
+            \includegraphics[height = 0.23\textheight, keepaspectratio]{fig/filter0-xyz.png} & \includegraphics[height = 0.23\textheight, keepaspectratio]{fig/filter3-xyz.png}
+        \end{tabular}
+        
+        \pause
+        
+        \column{0.5\textwidth}
+        \begin{equation*}
+            \begin{gathered}
+                \text{Πρόβλεψη} \\
+                \hat{p}_{t} = p_{t-1} + u_{t}, \quad u_{t} = \frac{p_{t-1} - p_{t-2}}{t_{t-1} - t_{t-2}} \\
+                \hat{P} = P_{t-1} + Q \\[.5cm]
+                \text{Διόρθωση} \\
+                Κ = \frac{\hat{P}}{\hat{P} + R}\\
+                p_{t} = \hat{p}_{t} + K \cdot (p_{t} - \hat{p}_{t}) \\
+                P_{t} = (1 - K) \cdot \hat{P}
+            \end{gathered}
+        \end{equation*}
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}
+\frametitle{Αντίστροφη κινηματική}
+    
+    \begin{center}
+        \begin{tabular}{cc}
+            \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/ik-reg1.png} & \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/ik-reg2.png}\\[3pt]
+            \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/ik-reg3.png} & \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/ik-reg4.png}\\[3pt]
+            \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/ik-reg5.png} & \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/ik-reg6.png}
+        \end{tabular}
+    \end{center}
+    
+\end{frame}
+
+\subsection{Δυναμική Ανάλυση}
+\begin{frame}
+\frametitle{Αντίστροφη δυναμική}
+
+    \begin{center}
+        \begin{tabular}{cc}
+            \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/id-hip.png} & \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/id-hip-ref.png}\\[3pt]
+            \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/id-knee.png} & \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/id-knee-ref.png}\\[3pt]
+            \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/id-ankle.png} & \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/id-ankle-ref.png}
+        \end{tabular}
+    \end{center}
+    
+    \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{Whittlesey Saunders, Robertson Gordon, "Two-Dimention Inverse Dynamics"}}
+    
+\end{frame}
+
+\begin{frame}
+\frametitle{Ορθή Δυναμική}
+    \begin{tabular}{cc}
+        \includegraphics[width=.48\textwidth, keepaspectratio]{fig/hip-ik-cmc.png} & \includegraphics[width=.48\textwidth, keepaspectratio]{fig/hip-ik-id.png}\\[3pt]
+        \includegraphics[width=.48\textwidth, keepaspectratio]{fig/knee-ik-cmc.png} & \includegraphics[width=.48\textwidth, keepaspectratio]{fig/knee-ik-id.png}\\[3pt]
+        \includegraphics[width=.48\textwidth, keepaspectratio]{fig/ankle-ik-cmc.png} & \includegraphics[width=.48\textwidth, keepaspectratio]{fig/ankle-ik-id.png}
+    \end{tabular}
 \end{frame}
 
 \end{document} 
