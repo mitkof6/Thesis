@@ -5,7 +5,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{fig/muscle-excitation-force.png}
+    \includegraphics[width=1.0\textwidth, keepaspectratio]{fig/muscle-excitation-force.png}
     \caption{Στάδια από την διέγερση έως την παραγωγή της κίνησης \cite{erdemir07}}
     \label{fig:muscle-excitation-force}
 \end{figure}
@@ -22,7 +22,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.8\textwidth, height=0.5\textheight]{fig/muscle-fysiology.png}
+    \includegraphics[width=.8\textwidth, height=0.5\textheight, keepaspectratio]{fig/muscle-fysiology.png}
     \caption{Σκελετικός μυς: ανατομική περιγραφή\protect\footnotemark}
     \label{fig:muscle-fysiology}
 \end{figure}
@@ -31,7 +31,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.8\textwidth, height=0.5\textheight]{fig/muscle-fysiology2.png}
+    \includegraphics[width=.8\textwidth, height=0.6\textheight, keepaspectratio]{fig/muscle-fysiology2.png}
     \caption{Δομή και συσταλτικός μηχανισμός του φυσιολογικού σκελετικού μυός\protect\footnotemark}
     \label{fig:muscle-fysiology2}
 \end{figure}
@@ -44,7 +44,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.7\textwidth, height=0.6\textheight]{fig/muscle-fysiology3.png}
+    \includegraphics[width=.7\textwidth, height=0.6\textheight, keepaspectratio]{fig/muscle-fysiology3.png}
     \caption{Σαρκοπλασματικό δίκτυο\protect\footnotemark}
     \label{fig:muscle-fysiology3}
 \end{figure}
@@ -57,7 +57,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.8\textwidth]{fig/muscle-fysiology4.png}
+    \includegraphics[width=.8\textwidth, keepaspectratio]{fig/muscle-fysiology4.png}
     \caption{Κινητικοί νευρώνες του νωτιαίου μυελού\protect\footnotemark}
     \label{fig:muscle-fysiology4}
 \end{figure}
@@ -69,7 +69,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.8\textwidth, height=0.5\textheight]{fig/muscle-fysiology5.png}
+    \includegraphics[width=.8\textwidth, height=0.5\textheight, keepaspectratio]{fig/muscle-fysiology5.png}
     \caption{Κινητική μονάδα (μυϊκή άτρακτος)}
     \label{fig:muscle-fysiology5}
 \end{figure}
@@ -122,12 +122,12 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[Η]{.5\textwidth}
-        \includegraphics[width=\textwidth]{fig/simple-muscle-model.png}
+        \includegraphics[width=\textwidth, keepaspectratio]{fig/simple-muscle-model.png}
         \caption{Απλοποιημένο μοντέλο\cite{millard13}}
         \label{fig:simple-mascle-model}
     \end{subfigure} ~
     \begin{subfigure}[Η]{.4\textwidth}
-        \includegraphics[width=\textwidth]{fig/muscle-model.png}
+        \includegraphics[width=\textwidth, keepaspectratio]{fig/muscle-model.png}
         \caption{Μαθηματικό μοντέλο\cite{erdemir07}}
         \label{fig:muscle-model}
     \end{subfigure}
@@ -137,19 +137,19 @@
 
 Όπως φαίνεται στην εικόνα \ref{fig:simple-mascle-model} οι μυικές ίνες συνδέονται με τον τένοντα υπό μια γωνιά α (\eng{pennation angle}). Η μοντελοποίηση της συστολής αποτελείται από τρία μέρη: το παθητικό (\eng{passive element}) που είναι μια δύναμη που ασκείται όταν ο μυς τεντωθεί πάνω από ένα συγκεκριμένο όριο, ο συστολικός μηχανισμός (\eng{contractile element}) που αφορά την παραγωγή της κύριας μυικής δύναμης και το σειριακό μέρος που έχει να κάνει με τις δυνάμεις που ασκούνται από το τένοντα.
 
-Πριν περιγράψουμε τις συναρτήσεις, μπορούμε να δούμε την καμπύλη κανονικοποιημένης δύναμης σε σχέση με το μήκος του μυ \ref{fig:active-force-legnth}. Στον άξονα \eng{x} έχουμε το κανονικοποιημένο μήκος με βάση το βέλτιστο μήκος του μυ $l^{M}_{o}$ (\eng{optimal fiber length}), ενώ στο άξονα \eng{y} έχουμε την κανονικοποιημένη δύναμη με βάση την μέγιστη ισομετρική δύναμη $f^{M}_{o}$ (\eng{maximum isometric force}). Οι καμπάνες συμβολίζουν την δύναμη που παράγει ο μυς και διαφοροποιούνται για διαφορετικές τιμές ενεργοποίησης $a$, που κυμαίνονται από $a_{min}$ μέχρι 1. Όταν το μήκος του μυ βρίσκεται σε μικρότερη ή μεγαλύτερη τιμή από την $l^{M}_{o}$ δεν μπορεί να παράξει την μέγιστη δύναμη, εξαιτίας της μειωμένης επικάλυψης μεταξύ της ακτίνης και της μυοσίνης. Πρέπει να προσέξουμε ότι το βέλτιστο της καμπάνας δεν βρίσκεται για $l = 100\%$ όσο μειώνεται η τιμή του \eng{a}. Επίσης, βλέπουμε ότι όταν ξεπεράσουμε ένα όριο επιμήκυνσης εμφανίζεται μια εκθετική δύναμη, που συμβολίζει την παθητική λειτουργία του μυ. Τέλος, η σύνθεση των δύο δυνάμεων παράγουν την καμπύλη δύναμη-μήκους για δεδομένη διέγερση.
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.5\textwidth, height=.35\textheight]{fig/active-force-legnth.png}
+    \includegraphics[width=.5\textwidth, height=.35\textheight, keepaspectratio]{fig/active-force-legnth.png}
     \caption{Καμπύλη δύναμη-μήκους για διαφορετικές τιμές ενεργοποίησης \cite{buchanan04}}
     \label{fig:active-force-legnth}
 \end{figure}
 %\footnotetext{Εικόνα από την δημοσίευση \cite{buchanan04}}
 
+Πριν περιγράψουμε τις συναρτήσεις, μπορούμε να δούμε την καμπύλη κανονικοποιημένης δύναμης σε σχέση με το μήκος του μυ \ref{fig:active-force-legnth}. Στον άξονα \eng{x} έχουμε το κανονικοποιημένο μήκος με βάση το βέλτιστο μήκος του μυ $l^{M}_{o}$ (\eng{optimal fiber length}), ενώ στο άξονα \eng{y} έχουμε την κανονικοποιημένη δύναμη με βάση την μέγιστη ισομετρική δύναμη $f^{M}_{o}$ (\eng{maximum isometric force}). Οι καμπάνες συμβολίζουν την δύναμη που παράγει ο μυς και διαφοροποιούνται για διαφορετικές τιμές ενεργοποίησης $a$, που κυμαίνονται από $a_{min}$ μέχρι 1. Όταν το μήκος του μυ βρίσκεται σε μικρότερη ή μεγαλύτερη τιμή από την $l^{M}_{o}$ δεν μπορεί να παράξει την μέγιστη δύναμη, εξαιτίας της μειωμένης επικάλυψης μεταξύ της ακτίνης και της μυοσίνης. Πρέπει να προσέξουμε ότι το βέλτιστο της καμπάνας δεν βρίσκεται για $l = 100\%$ όσο μειώνεται η τιμή του \eng{a}. Επίσης, βλέπουμε ότι όταν ξεπεράσουμε ένα όριο επιμήκυνσης εμφανίζεται μια εκθετική δύναμη, που συμβολίζει την παθητική λειτουργία του μυ. Τέλος, η σύνθεση των δύο δυνάμεων παράγουν την καμπύλη δύναμη-μήκους για δεδομένη διέγερση.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.6\textwidth]{fig/force-velocity.png}
+    \includegraphics[width=.6\textwidth, keepaspectratio]{fig/force-velocity.png}
     \caption{Καμπύλη δύναμη-ταχύτητας}
     \label{fig:force-velocity}
 \end{figure}
@@ -212,7 +212,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.6\textwidth, height=.30\textheight]{fig/muscle-skeleton-torque.png}
+    \includegraphics[width=.6\textwidth, height=.30\textheight, keepaspectratio]{fig/muscle-skeleton-torque.png}
     \caption{Συσχέτιση παραγόμενης δύναμης από τον μυ με ροπές στις αρθρώσεις \cite{erdemir07}}
     \label{fig:force-torques}
 \end{figure}
@@ -223,5 +223,3 @@
 \end{equation}
 
 Είναι φανερό, ότι υπολογισμός της δύναμης που ασκεί ο μυς είναι απαραίτητη η γνώση της διάταξης την συγκεκριμένη χρονική στιγμή. Κάτι που πρέπει να τονίσουμε είναι ότι κάθε μυς έχει μια συγκεκριμένη γεωμετρία και τυλίγεται με διαφορετικό τρόπο πάνω στον σκελετό. Δεν μπορούμε να θεωρήσουμε ότι ένας μυς απλά ξεκινάει σε ένα σημείο Α και καταλήγει σε ένα άλλο σημείο Β. Είναι απαραίτητη η περιγραφή της διαδρομής που ακολουθεί από μια ακολουθία σημείων, αλλά και τον τρόπο με τον οποίο τυλίγεται στην διάταξη \cite{delp95}. Για να βρεθεί το μήκος του μυ αθροίζονται τα επιμέρους ευθύγραμμα τμήματα που τον δημιουργούν.
-
-

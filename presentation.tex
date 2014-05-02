@@ -15,13 +15,15 @@
 %	PACKAGES AND THEMES
 %----------------------------------------------------------------------------------------
 
-\documentclass[8pt,sans,mathserif,aspectratio=43]{beamer}%aspectratio=43
+\documentclass[8pt,sans,mathserif]{beamer}%aspectratio=43
 
 \usepackage{ucs}
 \usepackage[T1]{fontenc}
 \usepackage[utf8x]{inputenc}
 \usepackage[english, greek]{babel}
 %\usepackage{kerkis}
+
+%\hypersetup{pdfpagemode=FullScreen}
 
 \mode<presentation> {
 
@@ -119,6 +121,20 @@
 %	PRESENTATION SLIDES
 %----------------------------------------------------------------------------------------
 
+%\begin{frame}
+%\begin{center}
+%\href{run: D:\\Dropbox\\Diploma\\Doc\\latex\\video\\test.mp4}{\includegraphics[width=1cm,height=1cm]{fig/play.jpeg}}
+%\end{center}
+%\end{frame}
+%\begin{frame}
+%\frametitle{Forward Kinematics}
+%
+%\begin{center}
+%    \movie{\includegraphics[width=0.8\textwidth]{fig/play.jpeg}}{video/test.avi}
+%\end{center}
+%\end{frame}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Εισαγωγή}
 \frame{\tableofcontents[currentsection]}
@@ -133,19 +149,19 @@
             \item Δυναμική ανάλυση της καταγεγραμμένης κίνησης (αντίστροφη κινηματική, αντίστροφη δυναμική, ορθή δυναμική, υπολογισμός μυϊκών διεγέρσεων)
         \end{itemize}
     \end{block}
-    
+
 \end{frame}
 
 \subsection{Ενδεικτικές Εφαρμογές}
 \begin{frame}
 \frametitle{Κίνητρο παράδειγμα}
-    
+
     \begin{figure}[c]
         \includegraphics[height=0.8\textheight, keepaspectratio]{fig/crouch-gait.png}
     \end{figure}
-    
+
     \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{Arnolda A., "The role of estimating muscle-tendon lengths and velocities of the hamstrings in the evaluation and treatment of crouch gait", 2006}}
-    
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -286,7 +302,7 @@
             \includegraphics[width=0.6\linewidth, keepaspectratio]{fig/hand2.png}
         \end{figure}
     \end{columns}
-    
+
     \begin{block}{Κριτήρια Φιλτραρίσματος}
         \begin{itemize}
             \item Την φύση της κίνησης (ταχύτητα)
@@ -294,15 +310,15 @@
             \item Εφαρμογή πραγματικού ή μη πραγματικού χρόνου
         \end{itemize}
     \end{block}
-    \onslide\let\thefootnote\relax\footnote{\hspace{-12pt}Εικόνα από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/jj131429.aspx}}}
+    \onslide\let\thefootnote\relax\footnote{\hspace{-12pt}Εικόνες από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/jj131429.aspx}}}
     }
-    
+
     \pause
-    
+
     \only<2>{
     \begin{block}{Κατηγορίες φίλτρων}
         \begin{itemize}
-            \item Κινούμενος μέσος όρος (χαμηλοπερατό) 
+            \item Κινούμενος μέσος όρος (χαμηλοπερατό)
             \item \eng{Savitzky–Golay} (ελαχιστοποιεί το τετραγωνικό σφάλμα)
             \item \eng{Exponential Smoothing Filter} (εκθετικό βάρος στις μετρήσεις)
             \item \eng{Adaptive Double Exponential Smoothing Filter} (πρόβλεψη και μεταβολή βαρών)
@@ -311,7 +327,7 @@
             \item \eng{Jitter Removal Filter}
         \end{itemize}
     \end{block}
-    
+
     \begin{center}
         \begin{tabular}{lccc}
             \toprule
@@ -327,7 +343,25 @@
         \end{tabular}
     \end{center}
     }
+
+
+\end{frame}
+
+\subsection{Υλοποίηση}
+\begin{frame}
+\frametitle{Πρόγραμμα καταγραφής}
     
+    \only<1>{
+    \begin{figure}[t]
+        \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/motion-capture.png}
+    \end{figure}
+    }
+    
+    \only<2>{
+    \begin{figure}[t]
+        \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/motion-capture-class-diagram.png}
+    \end{figure}
+    }
     
 \end{frame}
 
@@ -338,35 +372,35 @@
 \subsection{Περιγραφή της Διαδικασίας}
 \begin{frame}
 \frametitle{Στάδια της ανάλυσης}
-    
+
     \only<1>{
     \begin{figure}[t]
         \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/process.png}
     \end{figure}
     }
-    
+
     \only<2>{
     \begin{figure}[t]
         \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/ik-to-excitation.png}
     \end{figure}
     }
-    
+
     \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}Εικόνα από την ιστοσελίδα \eng{\url{http://simtk-confluence.stanford.edu:8080/display/OpenSim/Overview+of+the+OpenSim+Workflow}}}
-    
+
 \end{frame}
 
 \subsection{Το Μοντέλο}
 \begin{frame}
 \frametitle{Περιγραφή του μοντέλου}
-    
+
     \begin{columns}
         \column{0.4\textwidth}
         \begin{figure}[t]
             \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/lower-limb-model.png}
         \end{figure}
-        
+
         \pause
-        
+
         \column{0.6\textwidth}
         \begin{tabular}{ccc}
             \toprule
@@ -389,19 +423,19 @@
             \bottomrule
         \end{tabular}
     \end{columns}
-    
+
 \end{frame}
 
 \subsection{Αντίστροφη Κινηματική}
 \begin{frame}
 \frametitle{Αντίστροφη κινηματική}
-    
+
     \begin{block}{Ορισμός}
         Είναι η διαδικασία που μετατρέπει τις θέσεις των αρθρώσεων από το καρτεσιανό τρισδιάστατο χώρο σε γενικευμένες συντεταγμένες του μοντέλου (γωνίες), έτσι ώστε κάθε χρονική στιγμή το μοντέλο να είναι στην ίδια διάταξη με τις μετρήσιμες θέσεις των αντίστοιχων αρθρώσεων.
     \end{block}
-    
+
     \pause
-    
+
     \begin{equation*}
         \begin{aligned}
             & \underset{q}{\text{\eng{minimize}}}
@@ -410,69 +444,69 @@
             & & c_{j}(q_{j}) \leq b_{j}, \; i = 1, \ldots, N.
         \end{aligned}
     \end{equation*}
-    
+
 \end{frame}
 
 \subsubsection{Τοποθέτηση Ενδείξεων}
 \begin{frame}
 \frametitle{Τοποθέτηση ενδείξεων}
-    
+
     \begin{figure}[t]
         \includegraphics[height=0.9\textheight, keepaspectratio]{fig/kinect-vicon-markers.png}
     \end{figure}
-    
+
 \end{frame}
 
 \subsubsection{Κανονικοποίησης του Μοντέλου}
 \begin{frame}
 \frametitle{Κανονικοποίησης του μοντέλου}
-    
+
     \begin{figure}[t]
         \includegraphics[height=0.8\textheight, keepaspectratio]{fig/scaling.png}
     \end{figure}
-    
+
     \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}Εικόνα από την ιστοσελίδα \eng{\url{http://simtk-confluence.stanford.edu:8080/display/OpenSim/How+Scaling+Works}}}
-    
+
 \end{frame}
 
 \subsection{Αντίστροφη Δυναμική}
 \begin{frame}
 \frametitle{Αντίστροφη δυναμική}
-    
+
     \begin{block}{Ορισμός}
            Είναι η έρευνα των γενικευμένων ροπών ή δυνάμεων που πρέπει να ασκηθούν στις αρθρώσεις, ώστε το σύστημα να παράξει την συγκεκριμένη κίνηση.
     \end{block}
-    
+
     \pause
-    
+
     \begin{equation*}
         M(q) \cdot \ddot{q} + V(q, \dot{q}) + G(q) + F(q, \dot{q}) = \tau
     \end{equation*}
-    
+
     \pause
-    
+
     \begin{center}
         \alert{Απαιτείται η γνώση εξωτερικών δυνάμενων}
     \end{center}
-    
+
 \end{frame}
 
 \subsection{Υπολογισμός Μυϊκών Διεγέρσεων}
 \begin{frame}
 \frametitle{Υπολογισμός μυϊκών διεγέρσεων}
-    
+
     \begin{figure}[t]
         \includegraphics[width=0.9\linewidth, keepaspectratio]{fig/cmc-diagram.png}
     \end{figure}
-    
+
     \pause
-    
+
     \begin{equation*}
         \overrightarrow{k}_v = 2 \cdot \sqrt{\overrightarrow{k}_p}
     \end{equation*}
-    
+
     \pause
-    
+
     \begin{equation*}
         \begin{gathered}
             \underset{a}{\text{\eng{minimize}}} \sum_{i=1}^{N} a_{i}^{p} \\
@@ -480,30 +514,30 @@
             \sum_{i=1}^{N} (a_{i} \cdot f(f^{o}_{i}, l_{i}, v_{i})) \cdot  R_{ij} = \tau_{j}, \quad \forall j
         \end{gathered}
     \end{equation*}
-    
+
     \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{Thelen D., "Using computed muscle control to generate forward dynamic simulations of human walking from experimental data", 2006}}
-    
+
 \end{frame}
 
 \subsection{Ορθή Δυναμική}
 \begin{frame}
 \frametitle{Ορθή δυναμική}
-    
+
     \only<1>{
     \begin{figure}[t]
         \includegraphics[width=0.9\linewidth, keepaspectratio]{fig/forward-simulation.png}
     \end{figure}
-    
+
     \begin{equation*}
         \ddot{q} = M(q)^{-1} \cdot \{ \tau - V(q, \dot{q}) - G(q) - F(q, \dot{q})\}
     \end{equation*}
     }
-    
+
     \only<2>{
     \begin{figure}[t]
         \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/muscle-excitation-force.png}
     \end{figure}
-    
+
     \begin{equation*}
         \begin{aligned}
             \ddot{q} = M(q)^{-1} \cdot \{ R(q) \cdot F^{M} - V(q, \dot{q}) - G(q) - F(q, \dot{q})\} \\
@@ -511,9 +545,9 @@
         \end{aligned}
     \end{equation*}
     }
-    
+
     \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{Erdemir A., "Model-based estimation of muscle forces exerted during movements", 2007}}
-    
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

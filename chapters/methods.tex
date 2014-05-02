@@ -4,7 +4,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{fig/process.png}
+    \includegraphics[width=1.0\textwidth, keepaspectratio]{fig/process.png}
     \caption{Διαδικασία εξαγωγής των δυνάμενων\protect\footnotemark}
     \label{fig:methods-process1}
 \end{figure}
@@ -19,7 +19,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.9\textwidth]{fig/motion-capture.png}
+    \includegraphics[width=.9\textwidth, keepaspectratio]{fig/motion-capture.png}
     \caption{Επίδειξη του συστήματος καταγραφής της κίνησης που υλοποιήθηκε}
     \label{fig:motion-capture}
 \end{figure}
@@ -28,6 +28,15 @@
 
 Εσωτερικά αποθηκεύονται οι παρελθοντικές τιμές των θέσεων σε ειδικές δομές μαζί με όλη την πληροφορία που διαθέτει το \eng{Kinect}. Παρέχεται η δυνατότητα αποθήκευσης των δεδομένων σε δυαδική, μορφή η οποία είναι εύκολη στην ανάγνωση και δεν απαιτεί υλοποίηση πολύπλοκων συναρτήσεων ανάγνωσης. Επίσης υπάρχουν επιλογές για αποθήκευση των τροχιών σε μορφή \lq \eng{.dat}\rq\; της \eng{Matlab} και σε μορφή \lq \eng{.trc}\rq  , που είναι συμβατή με το εργαλείο \eng{OpenSim}.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.9\textwidth, keepaspectratio]{fig/motion-capture-class-diagram.png}
+    \caption{Διάγραμμα κλάσεων για το πρόγραμμα καταγραφής}
+    \label{fig:motion-capture-class-diagram}
+\end{figure}
+
+Όπως φαίνεται και στο διάγραμμα κλάσεων \ref{fig:motion-capture-class-diagram}, η κλάση \eng{Kinect} υλοποιεί την διασύνδεση με τον αισθητήρα και αναλαμβάνει να επεξεργάζεται τα δεδομένα που εισέρχονται από το \eng{Kinect}. Όταν έρθουν πακέτα από την έγχρωμη κάμερα απλά γεμίζει τον πίνακα \eng{rgbStream} με τις τιμές των αντίστοιχων χρημάτων, που στην συνέχει αποτυπώνονται από την μηχανή αναπαράστασης. Όταν έρθουν δεδομένα που αφορούν τον σκελετό, αρχικά φιλτράρονται με το προεπιλεγμένο φίλτρο και έπειτα τα δεδομένα συγκρατούνται από την κλάση \eng{Skeleton} μαζί με την χρονική στιγμή της άφιξης τους. Η κλάση \eng{Skeleton} συγκρατεί την χρονική ακολουθία των δεδομένων του σκελετού. Επίσης είναι σε θέση να το αναπαραστήσει σε συνδυασμό με την μηχανή αναπαράστασης, αλλά και υπάρχει η δυνατότητα αποθήκευσης των δεδομένων σε διάφορες μορφές, ώστε να χρησιμοποιηθούν για ανάλυση. Η κλάση \eng{Viewer} είναι η μηχανή αναπαράστασης που αναλαμβάνει να σχεδιάσει τον σκελετό και την έγχρωμη εικόνα, δίνοντας την δυνατότητα περιήγησης στο τρισδιάστατο χώρο, αλλά και αλληλεπίδρασης με τον χρήστη, έχοντας κάποιες προεπιλεγμένες εντολές που αναγράφονται στο παράθυρο. Τέλος, υπάρχει η δυνατότητα αλλαγής κάποιων παραμέτρων μέσω του αρχείου \eng{settings.ini}, όπως είναι ο τρόπος φιλτραρίσματος, οι ονομασίες των ενδείξεων (\eng{markers}), η τοποθεσία και το όνομα των αρχείων που αποθηκεύονται και η δυνατότητα ρύθμισης \eng{timer} ώστε να αποθηκεύει τα δεδομένα αυτόματα μετά από μια χρονική στιγμή.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Δημιουργία του Μοντέλου}
 
@@ -35,7 +44,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{fig/opensim.png}
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{fig/opensim.png}
     \caption{Γραφική διεπαφή του \eng{OpenSim}}
     \label{fig:opensim-gui}
 \end{figure}
@@ -46,7 +55,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{fig/opensim-architecture.png}
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{fig/opensim-architecture.png}
     \caption{Συνοπτική αρχιτεκτονική της βιβλιοθήκης του \eng{OpenSim}\protect\footnotemark}
     \label{fig:opensim-architecture}
 \end{figure}
@@ -62,7 +71,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[height=0.38\textheight]{fig/lower-limb-model.png}
+    \includegraphics[height=0.38\textheight, keepaspectratio]{fig/lower-limb-model.png}
     \caption{Μυοσκελετικό μοντέλο μαζί και δάπεδο αντίδρασης}
     \label{fig:lower-limb-model}
 \end{figure}
@@ -98,7 +107,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{fig/foot-contact.png}
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{fig/foot-contact.png}
     \caption{Εποπτική αναπαράσταση των σφαιρών αντίδρασης στα πόδια}
     \label{fig:foot-contact}
 \end{figure}
@@ -117,7 +126,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[height=0.6\textheight]{fig/kinect-vicon-markers.png}
+    \includegraphics[height=0.6\textheight, keepaspectratio]{fig/kinect-vicon-markers.png}
     \caption{Σύγκριση συστήματος ενδείξεων του \eng{Kinect} και του \eng{Vicon} δεξιά}
     \label{fig:kinect-vicon-markers}
 \end{figure}
@@ -162,15 +171,15 @@
 
 Ένα βήμα πιο πέρα στην ανάλυση είναι, αφού έχουν προσδιοριστεί οι δυνάμεις που ασκεί κάθε μυς κάθε χρονική στιγμή να βρεθεί η απαραίτητη διέγερση που πρέπει να τροφοδοτηθεί στον μυ ώστε να παράξει την απαιτούμενη δύναμη. Με αυτή την διαδικασία πλέων μπορούμε να φτάσουμε σε επίπεδο νευρικών διεγέρσεων και να ελέγχουμε την κίνηση από αυτές. Η μέθοδος που προσδιορίζει τις διεγέρσεις αποκαλείται υπολογισμός των μυϊκών διεγέρσεων (\eng{computed muscle control}).
 
-Μια τυπική ροή ώστε να φτάσουμε σε νευρικό επίπεδο διεγέρσεων περιγράφεται από την εικόνα \ref{fig:ik-to-excitation}. Η διεργασία πριν τον υπολογισμό των μυϊκών διεγέρσεων ονομάζεται αλγόριθμος υπολειμματικής μείωσης (\eng{residual redaction algorithm}) και μπορεί να παραληφθεί, αλλά γενικά βελτιώνει το αποτέλεσμα.
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{fig/ik-to-excitation.png}
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{fig/ik-to-excitation.png}
     \caption{Τυπική ροή υπολογισμού των μυϊκών διεγέρσεων\protect\footnotemark}
     \label{fig:ik-to-excitation}
 \end{figure}
 \footnotetext{Εικόνα από την ιστοσελίδα \eng{\url{http://simtk-confluence.stanford.edu:8080/display/OpenSim/Overview+of+the+OpenSim+Workflow}}}
+
+Μια τυπική ροή ώστε να φτάσουμε σε νευρικό επίπεδο διεγέρσεων περιγράφεται από την εικόνα \ref{fig:ik-to-excitation}. Η διεργασία πριν τον υπολογισμό των μυϊκών διεγέρσεων ονομάζεται αλγόριθμος υπολειμματικής μείωσης (\eng{residual redaction algorithm}) και μπορεί να παραληφθεί, αλλά γενικά βελτιώνει το αποτέλεσμα.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Εκτίμηση των Μυϊκών Δυνάμεων}
@@ -197,7 +206,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{fig/cmc-diagram.png}
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{fig/cmc-diagram.png}
     \caption{Διάγραμμα της διαδικασίας υπολογισμού μυϊκών διεγέρσεων \cite{thelen06}}
     \label{fig:cmc-diagram}
 \end{figure}
@@ -211,7 +220,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{fig/forward-simulation.png}
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{fig/forward-simulation.png}
     \caption{Στάδια της παραγωγής κίνηση με ορθή δυναμική\protect\footnotemark}
     \label{fig:forward-simulation}
 \end{figure}

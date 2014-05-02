@@ -15,7 +15,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.7\textwidth]{fig/kinect-characteristics.png}
+    \includegraphics[width=.7\textwidth, keepaspectratio]{fig/kinect-characteristics.png}
     \caption{Δυνατότητες του αισθητήρα \eng{Kinect}\protect\footnotemark}
     \label{fig:kinect-characteristics}
 \end{figure}
@@ -44,7 +44,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.7\textwidth, height=.35\textheight]{fig/kinect-operation-mode.png}
+    \includegraphics[width=.7\textwidth, height=.35\textheight, keepaspectratio]{fig/kinect-operation-mode.png}
     \caption{Περιγραφή περιοχών λειτουργίας\protect\footnotemark}
     \label{fig:kinect-operation-mode}
 \end{figure}
@@ -57,7 +57,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.9\textwidth]{fig/kinect-skeleton-algorithm.png}
+    \includegraphics[width=.9\textwidth, keepaspectratio]{fig/kinect-skeleton-algorithm.png}
     \caption{Διαδικασία εξαγωγής των αρθρώσεων \cite{shotton11}}
     \label{fig:kinect-skeleton-algorithm}
 \end{figure}
@@ -81,7 +81,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.9\textwidth]{fig/kinect-data-synthesis.png}
+    \includegraphics[width=.8\textwidth, keepaspectratio]{fig/kinect-data-synthesis.png}
     \caption{Συνθέσεις των εικόνων βάθους για την εκπαίδευση του αλγορίθμου \cite{shotton11}}
     \label{fig:kinect-data-synthesis}
 \end{figure}
@@ -99,15 +99,15 @@
 
 Το εργαλείο της \eng{Microsoft} είναι δωρεάν και παρέχει πλούσιο ρεπερτόριο από συναρτήσεις για πρόσβαση στην συσκευή. Είναι αποκλειστικά για \eng{Windows} και δεν μπορεί να χρησιμοποιηθεί από αλλά λειτουργικά. Οι γλώσσες προγραμματισμού που χρησιμοποιούνται είναι η \eng{C++} και η \eng{C\#}. Υπάρχει δυνατότητα συνεργασία με άλλες βιβλιοθήκες, όπως είναι η \eng{XNA} και το \eng{DirectX}.
 
-Όσον αφορά την απόκτηση σκελετικής πληροφορίας υπάρχει μια μεγάλη διαφορά στο ότι το \eng{SDK} της \eng{Microsoft} σου παρέχει πληροφορία 20 αρθρώσεων. Ένα σημαντικό πλεονέκτημα σε σχέση με άλλα εργαλεία είναι ότι δεν απαιτείται βαθμονόμιση του αισθητήρα. Επίσης μπορεί κανείς να ανιχνεύει μέχρι έξι σκελετούς στην εφαρμογή του. Τέλος, σου παρέχει έτοιμες δομές φίλτρων για την βελτίωση του αποτελέσματος της ακολουθίας των θέσεων, που είναι μια απαραίτητη διαδικασία αφού υπάρχει πάντα θόρυβος και προβλήματα εκτίμησης της θέσης. Στην εικόνα \ref{fig:microsoft-sdk-skeleton} φαίνεται ενδεικτικά η δομή του σκελετού που σου προσφέρει το συγκεκριμένο εργαλείο.
-
 \begin{figure}[H]
     \centering
-    \includegraphics[height=.35\textheight]{fig/microsoft-skeleton.png}
+    \includegraphics[height=.30\textheight, keepaspectratio]{fig/microsoft-skeleton.png}
     \caption{Σκελετικό σύστημα που παρέχει το εργαλείο της \eng{Microsoft}\protect\footnotemark}
     \label{fig:microsoft-sdk-skeleton}
 \end{figure}
 \footnotetext{Εικόνα από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/hh973077.aspx}}}
+
+Όσον αφορά την απόκτηση σκελετικής πληροφορίας υπάρχει μια μεγάλη διαφορά στο ότι το \eng{SDK} της \eng{Microsoft} σου παρέχει πληροφορία 20 αρθρώσεων. Ένα σημαντικό πλεονέκτημα σε σχέση με άλλα εργαλεία είναι ότι δεν απαιτείται βαθμονόμιση του αισθητήρα. Επίσης μπορεί κανείς να ανιχνεύει μέχρι έξι σκελετούς στην εφαρμογή του. Τέλος, σου παρέχει έτοιμες δομές φίλτρων για την βελτίωση του αποτελέσματος της ακολουθίας των θέσεων, που είναι μια απαραίτητη διαδικασία αφού υπάρχει πάντα θόρυβος και προβλήματα εκτίμησης της θέσης. Στην εικόνα \ref{fig:microsoft-sdk-skeleton} φαίνεται ενδεικτικά η δομή του σκελετού που σου προσφέρει το συγκεκριμένο εργαλείο.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\texorpdfstring{Εναλλακτικό Εργαλείο της \eng{OpenNI}}{}}
@@ -116,7 +116,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.7\textwidth, height=.3\textheight]{fig/openni-framework.jpg}
+    \includegraphics[width=.7\textwidth, height=.3\textheight, keepaspectratio]{fig/openni-framework.jpg}
     \caption{Αρχιτεκτονική της βιβλιοθήκης της \eng{OpenNI}\protect\footnotemark}
     \label{fig:openni-framework}
 \end{figure}
@@ -124,7 +124,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.5\textwidth]{fig/openni-skeleton.png}
+    \includegraphics[width=.5\textwidth, keepaspectratio]{fig/openni-skeleton.png}
     \caption{Σκελετικό σύστημα που προσφέρει το εργαλείο της \eng{OpenNI}}
     \label{fig:openni-skeleton}
 \end{figure}
@@ -171,7 +171,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.8\textwidth]{fig/kinect-joints.png}
+    \includegraphics[width=.9\textwidth, keepaspectratio]{fig/kinect-joints.png}
     \caption{Το σύστημα αρθρώσεων που χρησιμοποιήθικαι\protect\footnotemark}
     \label{fig:kinect-joints}
 \end{figure}
@@ -184,15 +184,15 @@
 
 Υπάρχουν πολλά ενοχλητικά προβλήματα που εμφανίζονται στην πράξη και καθιστούν τις μετρήσεις \lq μην κατάλληλες\rq\: για επεξεργασία. Ο θόρυβος επηρεάζεται από πολλούς παράγοντες, όπως είναι ο φωτισμός στον χώρο που διεξάγεται το πείραμα, η στάση του σώματος, η τοποθεσία της συσκευής και πολλά άλλα. Ένα πολύ εμφανές παράδειγμα θορύβου που εμφανίζεται κατά την εκτίμηση της θέσης της άρθρωσης, λόγω της μικρής απόκλιση της τιμής από την προηγούμενη μέτρηση, με αποτέλεσμα να δίνει την αίσθηση ότι το δείγμα τρέμει, ενώ στην πραγματικότητα είναι στάσιμο όπως φαίνεται και στην εικόνα \ref{fig:hand2}.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \begin{subfigure}[b]{.4\textwidth}
-        \includegraphics[width=\textwidth]{fig/hand1.png}
+        \includegraphics[width=.8\textwidth, keepaspectratio]{fig/hand1.png}
         \caption{Βέλτιστη εκτίμηση της θέσης του χεριού}
         \label{fig:hand1}
     \end{subfigure} ~
     \begin{subfigure}[b]{.4\textwidth}
-        \includegraphics[width=\textwidth]{fig/hand2.png}
+        \includegraphics[width=.8\textwidth, keepaspectratio]{fig/hand2.png}
         \caption{Εκτίμηση της θέσης του χεριού λόγω θορύβου}
         \label{fig:hand2}
     \end{subfigure}
@@ -205,14 +205,6 @@
 Αν επιλεχθεί να αποκοπούν οι ψηλές συχνότητες (απότομες κινήσεις), τότε θα αντιμετωπιστεί το πρόβλημα που αναφέρθηκε πιο πάνω και το αποτέλεσμα θα είναι αυτό της εικόνας \ref{fig:hand1}. Ο θόρυβος αυτής της μορφής στην ξένη βιβλιογραφία αναφέρεται σαν \lq \eng{jitter}\rq . Πρέπει να προσέξουμε όμως, γιατί το σύστημα θα αγνοεί πέραν του θορύβου και τις απότομες κινήσεις του δείγματος που ίσως είναι κάτι ανεπιθύμητο. Η σωστή επιλογή αυτών των παραμέτρων είναι κρίσιμη και εξαρτάται από την εφαρμογή που μας ενδιαφέρει και κυρίως από την ταχύτητα του δείγματος.
 
 Όπως φαίνεται στην εικόνα \ref{fig:filter-latency} με κόκκινο είναι η τροχιά, όπου βλέπουμε τις ανεπιθύμητες μεταβολές λόγω θορύβου. Από την άλλη με μπλε χρώμα είναι η τροχιά μετά το φιλτράρισμα, όπου παρατηρούμε ότι έχει εξομαλυνθεί ο θόρυβος, αλλά έχει δημιουργηθεί καθυστέρηση των δειγμάτων. Κάτι που αξίζει να σημειωθεί είναι ότι αν η εφαρμογή δεν απαιτείται να είναι πραγματικού χρόνου, τότε μπορούν να χρησιμοποιηθούν μην αιτιατά φίλτρα, που λαμβάνουν υπόψη στους υπολογισμούς τις μελλοντικές τιμές, με αποτέλεσμα να γίνει καλύτερη εκτίμηση της τροχιάς.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=.8\textwidth]{fig/filter-latency.png}
-    \caption{Εξομάλυνση και καθυστέρηση της ακολουθίας μετά το φιλτράρισμα\protect\footnotemark}
-    \label{fig:filter-latency}
-\end{figure}
-\footnotetext{Εικόνα από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/jj131429.aspx}}}
 
 Για παράδειγμα μια απλή τεχνική για την αφαίρεση του θορύβου λόγω \eng{jitter} βασίζεται στην απλή σχέση αναδρομής \ref{equ:jitter-removal}.
 
@@ -235,6 +227,14 @@
     \item \eng{Taylor Series} (δεν έχει μεγάλο παράθυρο πρόβλεψης)
     \item \eng{Median Filter} (απαλοιφή θόρυβος)
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth, keepaspectratio]{fig/filter-latency.png}
+    \caption{Εξομάλυνση και καθυστέρηση της ακολουθίας μετά το φιλτράρισμα\protect\footnotemark}
+    \label{fig:filter-latency}
+\end{figure}
+\footnotetext{Εικόνα από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/jj131429.aspx}}}
 
 Από τα παραπάνω φίλτρα ο κινούμενος μέσος όρος ουσιαστικά εξομαλύνει το αποτέλεσμα αλλά δεν έχει μεγάλες δυνατότητες πρόβλεψης. Σε αντίθεση τα φίλτρα \eng{Savitzky–Golay} εκτελούν παλινδρόμηση με χρήση πολυωνύμων, ελαχιστοποιώντας το τετραγωνικό σφάλμα και κατόπιν κάνουν πρόβλεψη για την επόμενη χρονική στιγμή με βάση το πολυώνυμο που έχει εκτιμηθεί. Τα \eng{Exponential Smoothing Filter} εξομαλύνουν το αποτέλεσμα λαμβάνοντας υπόψιν τις $Κ$ χρονικές στιγμές, με βάρη που φθίνουν εκθετικά, δίνοντας λιγότερη βαρύτητα σε παλαιότερες μετρήσεις. Τα \eng{Adaptive Double Exponential Smoothing} φίλτρα κάνουν ένα είδος πρόβλεψη με χρήση της ταχύτητας και παράλληλα χρησιμοποιούν συντελεστές βαρύτητας οι όποιοι μεταβάλλονται κατάλληλα \ref{equ:double-exponential}. Οι σειρές \eng{Taylor} προσεγγίζουν ένα πολυώνυμο με χρήση των παραγώγων και έπειτα προβλέπουν την επόμενη χρονική θέση με βάση αυτό. Οι σειρές \eng{Taylor} δεν έχουν μεγάλο παράθυρο πρόβλεψης. Τέλος υπάρχουν απλές υλοποιήσεις φίλτρων για την απαλοιφή του θορύβου όπως είναι το \eng{Median} φίλτρο. Στον πίνακα \ref{tab:filter-parameters} αναφέρονται οι παράμετροι που χρησιμοποιήθηκαν, ανάλογα με την εφαρμογή, ενώ για το επιθυμητό αποτέλεσμα του φιλτραρίσματος μπορούν να επιλεγούν κατάλληλες τιμές ως παράμετροι των φίλτρων.
 
