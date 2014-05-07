@@ -24,6 +24,9 @@
 %\usepackage{kerkis}
 
 %\hypersetup{pdfpagemode=FullScreen}
+\usepackage{multimedia}
+%\usepackage{movie15}
+\usepackage{hyperref}
 
 \mode<presentation> {
 
@@ -122,18 +125,18 @@
 %----------------------------------------------------------------------------------------
 
 %\begin{frame}
-%\begin{center}
-%\href{run: D:\\Dropbox\\Diploma\\Doc\\latex\\video\\test.mp4}{\includegraphics[width=1cm,height=1cm]{fig/play.jpeg}}
-%\end{center}
-%\end{frame}
-%\begin{frame}
-%\frametitle{Forward Kinematics}
+%\frametitle{Test}
 %
-%\begin{center}
-%    \movie{\includegraphics[width=0.8\textwidth]{fig/play.jpeg}}{video/test.avi}
-%\end{center}
+%    \begin{center}
+%        \movie[start=6s, width=11cm,height=6cm, poster]{}{video/filter0.avi}
+%    \end{center}
 %\end{frame}
 
+%\begin{frame}
+%    \begin{block}{Test}
+%        \includemovie[autoplay, poster]{4cm}{3cm}{video/filter0.avi}
+%    \end{block}
+%\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Εισαγωγή}
@@ -154,7 +157,7 @@
 
 \subsection{Ενδεικτικές Εφαρμογές}
 \begin{frame}
-\frametitle{Κίνητρο παράδειγμα}
+\frametitle{Κινητήριο παράδειγμα}
 
     \begin{figure}[c]
         \includegraphics[height=0.8\textheight, keepaspectratio]{fig/crouch-gait.png}
@@ -170,7 +173,7 @@
 
 \subsection{Η Συσκευή Ανίχνευσης}
 \begin{frame}
-\frametitle{Χαρακτηριστικά της συσκευή \eng{Kinect}}
+\frametitle{Χαρακτηριστικά της συσκευής \eng{Kinect}}
 
     \begin{columns}
     \column{0.5\textwidth}
@@ -205,7 +208,7 @@
         \end{tabular}
     \end{center}
 
-    \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}Εικόνες από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/jj131033.aspx}}}
+    \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{\url{http://msdn.microsoft.com/en-us/library/jj131033.aspx}}}
 
 \end{frame}
 
@@ -306,11 +309,11 @@
     \begin{block}{Κριτήρια Φιλτραρίσματος}
         \begin{itemize}
             \item Την φύση της κίνησης (ταχύτητα)
-            \item Εισαγωγή καθυστέρηση λόγο φιλτραρίσματος
+            \item Εισαγωγή καθυστέρησης λόγω φιλτραρίσματος
             \item Εφαρμογή πραγματικού ή μη πραγματικού χρόνου
         \end{itemize}
     \end{block}
-    \onslide\let\thefootnote\relax\footnote{\hspace{-12pt}Εικόνες από την ιστοσελίδα \eng{\url{http://msdn.microsoft.com/en-us/library/jj131429.aspx}}}
+    \onslide\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{\url{http://msdn.microsoft.com/en-us/library/jj131429.aspx}}}
     }
 
     \pause
@@ -321,9 +324,9 @@
             \item Κινούμενος μέσος όρος (χαμηλοπερατό)
             \item \eng{Savitzky–Golay} (ελαχιστοποιεί το τετραγωνικό σφάλμα)
             \item \eng{Exponential Smoothing Filter} (εκθετικό βάρος στις μετρήσεις)
-            \item \eng{Adaptive Double Exponential Smoothing Filter} (πρόβλεψη και μεταβολή βαρών)
+            \item \eng{Adaptive Double Exponential Smoothing Filter} (πρόβλεψη και μεταβολή των συντελεστών)
             \item \eng{Taylor Series} (δεν έχει μεγάλο παράθυρο πρόβλεψης)
-            \item \eng{Median Filter} (απαλοιφή θόρυβος)
+            \item \eng{Median Filter} (απαλοιφή θορύβου)
             \item \eng{Jitter Removal Filter}
         \end{itemize}
     \end{block}
@@ -334,11 +337,11 @@
             % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
             Παράμετροι & Κανονικό & Μέτριο & Δυνατό \\
             \midrule
-            Εξομάλιση & 0.5 & 0.5 & 0.7 \\
+            Εξομάλυνση & 0.5 & 0.5 & 0.7 \\
             Διόρθωση & 0.5 & 0.1 & 0.3 \\
             Πρόβλεψη & 0.5 & 0.5 & 1.0 \\
             Ακτίνα θορύβου & 0.05 & 0.1 & 1.0 \\
-            Μέγιστη απόκληρη & 0.04 & 0.1 & 1.0 \\
+            Μέγιστη απόκλιση & 0.04 & 0.1 & 1.0 \\
             \bottomrule
         \end{tabular}
     \end{center}
@@ -385,7 +388,7 @@
     \end{figure}
     }
 
-    \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}Εικόνα από την ιστοσελίδα \eng{\url{http://simtk-confluence.stanford.edu:8080/display/OpenSim/Overview+of+the+OpenSim+Workflow}}}
+    \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{\url{http://simtk-confluence.stanford.edu:8080/display/OpenSim/Overview+of+the+OpenSim+Workflow}}}
 
 \end{frame}
 
@@ -465,8 +468,8 @@
         \includegraphics[height=0.8\textheight, keepaspectratio]{fig/scaling.png}
     \end{figure}
 
-    \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}Εικόνα από την ιστοσελίδα \eng{\url{http://simtk-confluence.stanford.edu:8080/display/OpenSim/How+Scaling+Works}}}
-
+    \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{\url{http://simtk-confluence.stanford.edu:8080/display/OpenSim/How+Scaling+Works}}}
+    
 \end{frame}
 
 \subsection{Αντίστροφη Δυναμική}
@@ -557,27 +560,27 @@
 \subsection{Σύστημα Καταγραφής}
 \begin{frame}
 \frametitle{Μορφομετρικά Χαρακτηριστικά}
-    
+
     \only<1>{
     \begin{figure}[t]
         \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/subject01-segments.png}
     \end{figure}
-    
+
     \begin{center}
         \alert<1>{$std_{min} = 0.0030m, std_{max} = 0.0182m$}
     \end{center}
     }
-    
+
     \only<2>{
     \begin{figure}[t]
         \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/subject02-segments.png}
     \end{figure}
-    
+
     \begin{center}
         \alert<2>{$std_{min} = 0.0.0019m, std_{max} = 0.0146m$}
     \end{center}
     }
-    
+
 \end{frame}
 
 \begin{frame}
@@ -591,9 +594,9 @@
             \includegraphics[height = 0.23\textheight, keepaspectratio]{fig/filter0-z.png} & \includegraphics[height = 0.23\textheight, keepaspectratio]{fig/filter3-z.png}\\
             \includegraphics[height = 0.23\textheight, keepaspectratio]{fig/filter0-xyz.png} & \includegraphics[height = 0.23\textheight, keepaspectratio]{fig/filter3-xyz.png}
         \end{tabular}
-        
+
         \pause
-        
+
         \column{0.5\textwidth}
         \begin{equation*}
             \begin{gathered}
@@ -606,13 +609,20 @@
                 P_{t} = (1 - K) \cdot \hat{P}
             \end{gathered}
         \end{equation*}
+        
+        \begin{center}
+            \href{run:video/filter0.avi}{\includegraphics[scale=0.15]{fig/play.jpeg}}
+            \href{run:video/filter3.avi}{\includegraphics[scale=0.15]{fig/play.jpeg}}
+        \end{center}
+        
     \end{columns}
-    
+
 \end{frame}
 
 \begin{frame}
 \frametitle{Αντίστροφη κινηματική}
     
+    \only<1>{
     \begin{center}
         \begin{tabular}{cc}
             \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/ik-reg1.png} & \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/ik-reg2.png}\\[3pt]
@@ -620,6 +630,14 @@
             \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/ik-reg5.png} & \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/ik-reg6.png}
         \end{tabular}
     \end{center}
+    }
+    
+    \uncover<2>{
+    \begin{center}
+        \href{run:video/walk-motion-capture.avi}{\includegraphics[scale=0.15]{fig/play.jpeg}}
+        \href{run:video/walk-opensim.avi}{\includegraphics[scale=0.15]{fig/play.jpeg}}
+    \end{center}
+    }
     
 \end{frame}
 
@@ -634,18 +652,20 @@
             \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/id-ankle.png} & \includegraphics[width=.48\textwidth, height = 0.25\textheight, keepaspectratio]{fig/id-ankle-ref.png}
         \end{tabular}
     \end{center}
-    
+
     \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{Whittlesey Saunders, Robertson Gordon, "Two-Dimention Inverse Dynamics"}}
-    
+
 \end{frame}
 
 \begin{frame}
 \frametitle{Ορθή Δυναμική}
+
     \begin{tabular}{cc}
         \includegraphics[width=.48\textwidth, keepaspectratio]{fig/hip-ik-cmc.png} & \includegraphics[width=.48\textwidth, keepaspectratio]{fig/hip-ik-id.png}\\[3pt]
         \includegraphics[width=.48\textwidth, keepaspectratio]{fig/knee-ik-cmc.png} & \includegraphics[width=.48\textwidth, keepaspectratio]{fig/knee-ik-id.png}\\[3pt]
         \includegraphics[width=.48\textwidth, keepaspectratio]{fig/ankle-ik-cmc.png} & \includegraphics[width=.48\textwidth, keepaspectratio]{fig/ankle-ik-id.png}
     \end{tabular}
+
 \end{frame}
 
 \end{document} 
