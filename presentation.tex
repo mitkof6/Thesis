@@ -100,7 +100,7 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Καταγραφή και Δυναμική Ανάλυση της Κίνησης του Ανθρώπου]{Καταγραφή και Δυναμική Ανάλυση της Κίνησης του Ανθρώπου}
+\title[Καταγραφή και Δυναμική Ανάλυση της Ανθρώπινης Κίνησης]{Καταγραφή και Δυναμική Ανάλυση της Ανθρώπινης Κίνησης}
 
 %\author{\eng{Stanev Dimitar}} % Your name
 \institute[ΗΜ\&ΤΥ]{
@@ -155,17 +155,17 @@
 
 \end{frame}
 
-\subsection{Ενδεικτικές Εφαρμογές}
-\begin{frame}
-\frametitle{Κινητήριο παράδειγμα}
-
-    \begin{figure}[c]
-        \includegraphics[height=0.8\textheight, keepaspectratio]{fig/crouch-gait.png}
-    \end{figure}
-
-    \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{Arnolda A., "The role of estimating muscle-tendon lengths and velocities of the hamstrings in the evaluation and treatment of crouch gait", 2006}}
-
-\end{frame}
+%\subsection{Ενδεικτικές Εφαρμογές}
+%\begin{frame}
+%\frametitle{Κινητήριο παράδειγμα}
+%
+%    \begin{figure}[c]
+%        \includegraphics[height=0.8\textheight, keepaspectratio]{fig/crouch-gait.png}
+%    \end{figure}
+%
+%    \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{Arnolda A., "The role of estimating muscle-tendon lengths and velocities of the hamstrings in the evaluation and treatment of crouch gait", 2006}}
+%
+%\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Καταγραφή της Κίνησης}
@@ -189,7 +189,7 @@
         \end{figure}
     \end{columns}
 
-    \pause
+    %\pause
 
     \begin{center}
         \begin{tabular}{ll}
@@ -239,43 +239,43 @@
 
 \subsection{Αλγόριθμος Ανίχνευσης Σκελετού}
 \begin{frame}
-\frametitle{Βασικές αρχές αλγορίθμου}
+\frametitle{Βασικά πλεονεκτήματα του αλγορίθμου}
+
+    %\only<1>{
+%    \begin{figure}[t]
+%        \includegraphics[width=0.6\linewidth, height=0.7\textheight, keepaspectratio]{fig/kinect-algorithms.png}
+%    \end{figure}
+%
+%    %\begin{figure}[t]
+%%        \includegraphics[width=0.8\linewidth, keepaspectratio]{fig/kinect-skeleton-algorithm.png}
+%%    \end{figure}
+%    }
+%
+%    \only<2-3>{
+%    \begin{columns}
+%        \column<2-3>{0.5\textwidth}
+%        \begin{figure}[t]
+%            \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/kinect-depth-function.png}
+%        \end{figure}
+%        \column<2-3>{0.5\textwidth}
+%        \begin{equation*}
+%            f(u|\phi ) = z\big( u + \frac{\delta_1}{z(u)}\big)-z\big( u + \frac{\delta_2}{z(u)}\big)
+%        \end{equation*}
+%    \end{columns}
+%
+%    \begin{columns}
+%        \column<3>{0.5\textwidth}
+%        \begin{figure}[t]
+%            \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/random-decision-forest.png}
+%        \end{figure}
+%        \column<3>{0.5\textwidth}
+%        \begin{equation*}
+%            p(c|u) = \frac{1}{T} \cdot \sum_{l \in L(u)} p_{l}(c)
+%        \end{equation*}
+%    \end{columns}
+%    }
 
     \only<1>{
-    \begin{figure}[t]
-        \includegraphics[width=0.6\linewidth, height=0.7\textheight, keepaspectratio]{fig/kinect-algorithms.png}
-    \end{figure}
-
-    %\begin{figure}[t]
-%        \includegraphics[width=0.8\linewidth, keepaspectratio]{fig/kinect-skeleton-algorithm.png}
-%    \end{figure}
-    }
-
-    \only<2-3>{
-    \begin{columns}
-        \column<2-3>{0.5\textwidth}
-        \begin{figure}[t]
-            \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/kinect-depth-function.png}
-        \end{figure}
-        \column<2-3>{0.5\textwidth}
-        \begin{equation*}
-            f(u|\phi ) = z\big( u + \frac{\delta_1}{z(u)}\big)-z\big( u + \frac{\delta_2}{z(u)}\big)
-        \end{equation*}
-    \end{columns}
-
-    \begin{columns}
-        \column<3>{0.5\textwidth}
-        \begin{figure}[t]
-            \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/random-decision-forest.png}
-        \end{figure}
-        \column<3>{0.5\textwidth}
-        \begin{equation*}
-            p(c|u) = \frac{1}{T} \cdot \sum_{l \in L(u)} p_{l}(c)
-        \end{equation*}
-    \end{columns}
-    }
-
-    \only<4>{
     \begin{block}{Πλεονεκτήματα αλγορίθμου}
         \begin{itemize}
             \item Υπάρχει εσωτερική υλοποίηση
@@ -287,7 +287,7 @@
     \end{block}
     }
 
-    \onslide<1-3>\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{Shotton J., "Efficient Human Pose Estimation from Single Depth Images", 2011}}
+    \onslide<1>\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{Shotton J., "Efficient Human Pose Estimation from Single Depth Images", 2011}}
 \end{frame}
 
 \subsection{Θόρυβος}
@@ -316,20 +316,19 @@
     \onslide\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{\url{http://msdn.microsoft.com/en-us/library/jj131429.aspx}}}
     }
 
-    \pause
-
     \only<2>{
-    \begin{block}{Κατηγορίες φίλτρων}
-        \begin{itemize}
-            \item Κινούμενος μέσος όρος (χαμηλοπερατό)
-            \item \eng{Savitzky–Golay} (ελαχιστοποιεί το τετραγωνικό σφάλμα)
-            \item \eng{Exponential Smoothing Filter} (εκθετικό βάρος στις μετρήσεις)
-            \item \eng{Adaptive Double Exponential Smoothing Filter} (πρόβλεψη και μεταβολή των συντελεστών)
-            \item \eng{Taylor Series} (δεν έχει μεγάλο παράθυρο πρόβλεψης)
-            \item \eng{Median Filter} (απαλοιφή θορύβου)
-            \item \eng{Jitter Removal Filter}
-        \end{itemize}
-    \end{block}
+
+    %\begin{block}{Κατηγορίες φίλτρων}
+%        \begin{itemize}
+%            \item Κινούμενος μέσος όρος (χαμηλοπερατό)
+%            \item \eng{Savitzky–Golay} (ελαχιστοποιεί το τετραγωνικό σφάλμα)
+%            \item \eng{Exponential Smoothing Filter} (εκθετικό βάρος στις μετρήσεις)
+%            \item \eng{Adaptive Double Exponential Smoothing Filter} (πρόβλεψη και μεταβολή των συντελεστών)
+%            \item \eng{Taylor Series} (δεν έχει μεγάλο παράθυρο πρόβλεψης)
+%            \item \eng{Median Filter} (απαλοιφή θορύβου)
+%            \item \eng{Jitter Removal Filter}
+%        \end{itemize}
+%    \end{block}
 
     \begin{center}
         \begin{tabular}{lccc}
@@ -345,219 +344,34 @@
             \bottomrule
         \end{tabular}
     \end{center}
-    }
-
-
-\end{frame}
-
-\subsection{Υλοποίηση}
-\begin{frame}
-\frametitle{Πρόγραμμα καταγραφής}
-
-    \only<1>{
-    \begin{figure}[t]
-        \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/motion-capture.png}
-    \end{figure}
-    }
-
-    \only<2>{
-    \begin{figure}[t]
-        \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/motion-capture-class-diagram.png}
-    \end{figure}
-    }
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Υλικά και Μέθοδοι}
-\frame{\tableofcontents[currentsection]}
-
-\subsection{Περιγραφή της Διαδικασίας}
-\begin{frame}
-\frametitle{Στάδια της ανάλυσης}
-
-    \only<1>{
-    \begin{figure}[t]
-        \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/process.png}
-    \end{figure}
-    }
-
-    \only<2>{
-    \begin{figure}[t]
-        \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/ik-to-excitation.png}
-    \end{figure}
-    }
-
-    \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{\url{http://simtk-confluence.stanford.edu:8080/display/OpenSim/Overview+of+the+OpenSim+Workflow}}}
-
-\end{frame}
-
-\subsection{Το Μοντέλο}
-\begin{frame}
-\frametitle{Περιγραφή του μοντέλου}
-
-    \begin{columns}
-        \column{0.4\textwidth}
-        \begin{figure}[t]
-            \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/lower-limb-model.png}
-        \end{figure}
-
-        \pause
-
-        \column{0.6\textwidth}
-        \begin{tabular}{ccc}
-            \toprule
-            % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-            Άρθρωση & Κάτω όριο & Πάνω όριο\\
-            \midrule
-            \eng{pelvis\_till (z)} & $-90^{o}$ & $+90^{o}$\\
-            \eng{pelvis\_list (x)} & $-90^{o}$ & $+90^{o}$\\
-            \eng{pelvis\_rotation (y)} & $-90^{o}$ & $+90^{o}$\\
-            \eng{pelvis\_tx} & $-5$ & $+5$\\
-            \eng{pelvis\_ty} & $-1$ & $+2$\\
-            \eng{pelvis\_tz} & $-3$ & $+3$\\
-            \eng{hip\_flexion} & $-95^{o}$ & $+95^{o}$\\
-            \eng{hip\_adduction} & $-50^{o}$ & $+15^{o}$\\
-            \eng{hip\_rotation} & $-20^{o}$ & $+20^{o}$\\
-            \eng{knee\_angle} & $-120^{o}$ & $+0^{o}$\\
-            \eng{ankle\_angle} & $-30^{o}$ & $+30^{o}$\\
-            \eng{subtalar\_angle} & $-20^{o}$ & $+20^{o}$\\
-            \eng{mtp\_angle} & $-30^{o}$ & $+30^{o}$\\
-            \bottomrule
-        \end{tabular}
-    \end{columns}
-
-\end{frame}
-
-\subsection{Αντίστροφη Κινηματική}
-\begin{frame}
-\frametitle{Αντίστροφη κινηματική}
-
-    \begin{block}{Ορισμός}
-        Είναι η διαδικασία που μετατρέπει τις θέσεις των αρθρώσεων από το καρτεσιανό τρισδιάστατο χώρο σε γενικευμένες συντεταγμένες του μοντέλου (γωνίες), έτσι ώστε κάθε χρονική στιγμή το μοντέλο να είναι στην ίδια διάταξη με τις μετρήσιμες θέσεις των αντίστοιχων αρθρώσεων.
-    \end{block}
-
-    \pause
-
-    \begin{equation*}
-        \begin{aligned}
-            & \underset{q}{\text{\eng{minimize}}}
-            & & \sum_{j=1}^{N} w_{j} \cdot \norm{p_{j} - p(q_{j})}^{2} \\
-            & \text{\eng{s.t.}}
-            & & c_{j}(q_{j}) \leq b_{j}, \; i = 1, \ldots, N.
-        \end{aligned}
-    \end{equation*}
-
-\end{frame}
-
-\subsubsection{Τοποθέτηση Ενδείξεων}
-\begin{frame}
-\frametitle{Τοποθέτηση ενδείξεων}
-
-    \begin{figure}[t]
-        \includegraphics[height=0.9\textheight, keepaspectratio]{fig/kinect-vicon-markers.png}
-    \end{figure}
-
-\end{frame}
-
-\subsubsection{Κανονικοποίησης του Μοντέλου}
-\begin{frame}
-\frametitle{Κανονικοποίησης του μοντέλου}
-
-    \begin{figure}[t]
-        \includegraphics[height=0.8\textheight, keepaspectratio]{fig/scaling.png}
-    \end{figure}
-
-    \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{\url{http://simtk-confluence.stanford.edu:8080/display/OpenSim/How+Scaling+Works}}}
-
-\end{frame}
-
-\subsection{Αντίστροφη Δυναμική}
-\begin{frame}
-\frametitle{Αντίστροφη δυναμική}
-
-    \begin{block}{Ορισμός}
-           Είναι η έρευνα των γενικευμένων ροπών ή δυνάμεων που πρέπει να ασκηθούν στις αρθρώσεις, ώστε το σύστημα να παράξει την συγκεκριμένη κίνηση.
-    \end{block}
-
-    \pause
-
-    \begin{equation*}
-        M(q) \cdot \ddot{q} + V(q, \dot{q}) + G(q) + F(q, \dot{q}) = \tau
-    \end{equation*}
-
-    \pause
 
     \begin{center}
-        \alert{Απαιτείται η γνώση εξωτερικών δυνάμενων}
+        \href{run:video/filter0.avi}{\includegraphics[scale=0.15]{fig/play.jpeg}}
+        \href{run:video/filter3.avi}{\includegraphics[scale=0.15]{fig/play.jpeg}}
     \end{center}
-
-\end{frame}
-
-\subsection{Υπολογισμός Μυϊκών Διεγέρσεων}
-\begin{frame}
-\frametitle{Υπολογισμός μυϊκών διεγέρσεων}
-
-    \begin{figure}[t]
-        \includegraphics[width=0.9\linewidth, keepaspectratio]{fig/cmc-diagram.png}
-    \end{figure}
-
-    \pause
-
-    \begin{equation*}
-        \overrightarrow{k}_v = 2 \cdot \sqrt{\overrightarrow{k}_p}
-    \end{equation*}
-
-    \pause
-
-    \begin{equation*}
-        \begin{gathered}
-            \underset{a}{\text{\eng{minimize}}} \sum_{i=1}^{N} a_{i}^{p} \\
-            \text{\eng{s.t.}} \quad
-            \sum_{i=1}^{N} (a_{i} \cdot f(f^{o}_{i}, l_{i}, v_{i})) \cdot  R_{ij} = \tau_{j}, \quad \forall j
-        \end{gathered}
-    \end{equation*}
-
-    \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{Thelen D., "Using computed muscle control to generate forward dynamic simulations of human walking from experimental data", 2006}}
-
-\end{frame}
-
-\subsection{Ορθή Δυναμική}
-\begin{frame}
-\frametitle{Ορθή δυναμική}
-
-    \only<1>{
-    \begin{figure}[t]
-        \includegraphics[width=0.9\linewidth, keepaspectratio]{fig/forward-simulation.png}
-    \end{figure}
-
-    \begin{equation*}
-        \ddot{q} = M(q)^{-1} \cdot \{ \tau - V(q, \dot{q}) - G(q) - F(q, \dot{q})\}
-    \end{equation*}
     }
 
-    \only<2>{
-    \begin{figure}[t]
-        \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/muscle-excitation-force.png}
-    \end{figure}
-
-    \begin{equation*}
-        \begin{aligned}
-            \ddot{q} = M(q)^{-1} \cdot \{ R(q) \cdot F^{M} - V(q, \dot{q}) - G(q) - F(q, \dot{q})\} \\
-             f^{M} = f^{M}_{o} \cdot (a \cdot f^{L}(\tilde{l}^{M}) \cdot f^{V}(\tilde{v}^{M}) + f^{PE}(\tilde{l}^{M}))
-        \end{aligned}
-    \end{equation*}
-    }
-
-    \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{Erdemir A., "Model-based estimation of muscle forces exerted during movements", 2007}}
-
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Αποτελέσματα}
-\frame{\tableofcontents[currentsection]}
+%\subsection{Υλοποίηση}
+%\begin{frame}
+%\frametitle{Πρόγραμμα καταγραφής}
+%
+%    \only<1>{
+%    \begin{figure}[t]
+%        \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/motion-capture.png}
+%    \end{figure}
+%    }
+%
+%    \only<2>{
+%    \begin{figure}[t]
+%        \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/motion-capture-class-diagram.png}
+%    \end{figure}
+%    }
+%
+%\end{frame}
 
-\subsection{Σύστημα Καταγραφής}
+\subsection{Αποτελέσματα}
 \begin{frame}
 \frametitle{Μορφομετρικά Χαρακτηριστικά}
 
@@ -610,17 +424,97 @@
             \end{gathered}
         \end{equation*}
 
-        \begin{center}
-            \href{run:video/filter0.avi}{\includegraphics[scale=0.15]{fig/play.jpeg}}
-            \href{run:video/filter3.avi}{\includegraphics[scale=0.15]{fig/play.jpeg}}
-        \end{center}
-
     \end{columns}
 
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Μοντελοποίηση και Ανάλυση}
+\frame{\tableofcontents[currentsection]}
+
+\subsection{Το Μοντέλο}
+\begin{frame}
+\frametitle{Περιγραφή του μοντέλου}
+
+    \begin{columns}
+        \column{0.4\textwidth}
+        \begin{figure}[t]
+            \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/lower-limb-model.png}
+        \end{figure}
+
+        \pause
+
+        \column{0.6\textwidth}
+        \begin{tabular}{ccc}
+            \toprule
+            % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+            Άρθρωση & Κάτω όριο & Πάνω όριο\\
+            \midrule
+            \eng{pelvis\_till (z)} & $-90^{o}$ & $+90^{o}$\\
+            \eng{pelvis\_list (x)} & $-90^{o}$ & $+90^{o}$\\
+            \eng{pelvis\_rotation (y)} & $-90^{o}$ & $+90^{o}$\\
+            \eng{pelvis\_tx} & $-5$ & $+5$\\
+            \eng{pelvis\_ty} & $-1$ & $+2$\\
+            \eng{pelvis\_tz} & $-3$ & $+3$\\
+            \eng{hip\_flexion} & $-95^{o}$ & $+95^{o}$\\
+            \eng{hip\_adduction} & $-50^{o}$ & $+15^{o}$\\
+            \eng{hip\_rotation} & $-20^{o}$ & $+20^{o}$\\
+            \eng{knee\_angle} & $-120^{o}$ & $+0^{o}$\\
+            \eng{ankle\_angle} & $-30^{o}$ & $+30^{o}$\\
+            \eng{subtalar\_angle} & $-20^{o}$ & $+20^{o}$\\
+            \eng{mtp\_angle} & $-30^{o}$ & $+30^{o}$\\
+            \bottomrule
+        \end{tabular}
+    \end{columns}
+
+\end{frame}
+
+\subsection{Αντίστροφη Κινηματική}
+\subsubsection{Τοποθέτηση Ενδείξεων}
+\begin{frame}
+\frametitle{Τοποθέτηση ενδείξεων}
+
+    \begin{figure}[t]
+        \includegraphics[height=0.9\textheight, keepaspectratio]{fig/kinect-vicon-markers.png}
+    \end{figure}
+
+\end{frame}
+
+\subsubsection{Κανονικοποίησης του Μοντέλου}
+\begin{frame}
+\frametitle{Κανονικοποίησης του μοντέλου}
+
+    \begin{figure}[t]
+        \includegraphics[height=0.8\textheight, keepaspectratio]{fig/scaling.png}
+    \end{figure}
+
+    \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{\url{http://simtk-confluence.stanford.edu:8080/display/OpenSim/How+Scaling+Works}}}
+
+\end{frame}
+
+\subsubsection{Διεξαγωγή της Αντίστροφης Κινηματικής}
 \begin{frame}
 \frametitle{Αντίστροφη κινηματική}
+
+    \begin{block}{Ορισμός}
+        Είναι η διαδικασία που μετατρέπει τις θέσεις των αρθρώσεων από το καρτεσιανό τρισδιάστατο χώρο σε γενικευμένες συντεταγμένες του μοντέλου (γωνίες), έτσι ώστε κάθε χρονική στιγμή το μοντέλο να είναι στην ίδια διάταξη με τις μετρήσιμες θέσεις των αντίστοιχων αρθρώσεων.
+    \end{block}
+
+    \pause
+
+    \begin{equation*}
+        \begin{aligned}
+            & \underset{q}{\text{\eng{minimize}}}
+            & & \sum_{j=1}^{N} w_{j} \cdot \norm{p_{j} - p(q_{j})}^{2} \\
+            & \text{\eng{s.t.}}
+            & & c_{j}(q_{j}) \leq b_{j}, \; i = 1, \ldots, N.
+        \end{aligned}
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Αποτελέσματα αντίστροφης κινηματικής}
 
     \only<1>{
     \begin{center}
@@ -636,18 +530,77 @@
     \begin{figure}[c]
         \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/ik-no-scale-with-scale.png}
     \end{figure}
-    
+
     \begin{center}
-        \href{run:video/walk-motion-capture.avi}{\includegraphics[scale=0.15]{fig/play.jpeg}}
+        %\href{run:video/walk-motion-capture.avi}{\includegraphics[scale=0.15]{fig/play.jpeg}}
         \href{run:video/walk-opensim.avi}{\includegraphics[scale=0.15]{fig/play.jpeg}}
     \end{center}
     }
 
 \end{frame}
 
-\subsection{Δυναμική Ανάλυση}
+%\section{Δυναμική}
+
+%\begin{frame}
+%\frametitle{Στάδια της ανάλυσης}
+%
+%    \only<1>{
+%    \begin{figure}[t]
+%        \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/process.png}
+%    \end{figure}
+%    }
+%
+%    \only<2>{
+%    \begin{figure}[t]
+%        \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/ik-to-excitation.png}
+%    \end{figure}
+%    }
+%
+%    \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{\url{http://simtk-confluence.stanford.edu:8080/display/OpenSim/Overview+of+the+OpenSim+Workflow}}}
+%
+%\end{frame}
+
+\subsection{Κατηγορίες Μεθόδων Δυναμικής}
+\begin{frame}
+\frametitle{Κατηγορίες των μεθόδων δυναμικής ανάλυσης}
+
+\begin{block}{Κατηγορίες μεθόδων}
+    \begin{itemize}
+        \item<1-> Μέθοδοι αντίστροφης δυναμικής
+        \item<2-> Μέθοδοι ορθής δυναμικής
+        \begin{itemize}
+            \item<3-> Μεθόδων βασιζόμενοι στην ρύθμιση (\eng{PD} έλεγχος)
+            \item<4-> Μέθοδοι βασιζόμενοι σε κριτήρια βελτιστοποίησης
+        \end{itemize}
+    \end{itemize}
+\end{block}
+
+\end{frame}
+
+\subsection{Αντίστροφη Δυναμική}
 \begin{frame}
 \frametitle{Αντίστροφη δυναμική}
+
+    \begin{block}{Ορισμός}
+           Είναι η έρευνα των γενικευμένων ροπών ή δυνάμεων που πρέπει να ασκηθούν στις αρθρώσεις, ώστε το σύστημα να παράξει την συγκεκριμένη κίνηση.
+    \end{block}
+
+    \pause
+
+    \begin{equation*}
+        M(q) \cdot \ddot{q} + V(q, \dot{q}) + G(q) + F(q, \dot{q}) = \tau
+    \end{equation*}
+
+    \pause
+
+    \begin{center}
+        \alert{Απαιτείται η γνώση εξωτερικών δυνάμενων}\\
+        \alert{Απαιτείται η γνώση της κατανομής της μάζας}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Αποτελέσματα αντίστροφης δυναμικής}
 
     \begin{center}
         \begin{tabular}{cc}
@@ -661,14 +614,120 @@
 
 \end{frame}
 
+\subsection{Ορθή Δυναμική}
 \begin{frame}
-\frametitle{Ορθή Δυναμική}
+\frametitle{Μέθοδος της ορθής δυναμικής}
 
+    \begin{figure}[t]
+        \includegraphics[width=0.9\linewidth, keepaspectratio]{fig/forward-simulation.png}
+    \end{figure}
+
+    \pause
+
+    \begin{equation*}
+        \ddot{q} = M(q)^{-1} \cdot \{ \tau - V(q, \dot{q}) - G(q) - F(q, \dot{q})\}
+    \end{equation*}
+
+\end{frame}
+
+%\subsection{Μυοσκελετική Συσχέτιση}
+\begin{frame}
+\frametitle{Μυοσκελετική συσχέτιση}
+
+    \begin{figure}[t]
+        \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/muscle-excitation-force.png}
+    \end{figure}
+
+    \pause
+
+    \begin{equation*}
+        \begin{gathered}
+            \ddot{q} = M(q)^{-1} \cdot \{ R(q) \cdot F^{M} - V(q, \dot{q}) - G(q) - F(q, \dot{q})\} \\[0.5cm]
+             f^{M} = f^{M}_{o} \cdot (a \cdot f^{L}(\tilde{l}^{M}) \cdot f^{V}(\tilde{v}^{M}) + f^{PE}(\tilde{l}^{M}))
+        \end{gathered}
+    \end{equation*}
+
+    \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{Erdemir A., "Model-based estimation of muscle forces exerted during movements", 2007}}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Χαρακτηριστικά μυών}
+
+    \only<1>{
+    \begin{figure}[t]
+        \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/fiber-length-vs-knee-angle.png}
+    \end{figure}
+    }
+
+    \only<2>{
+    \begin{figure}[t]
+        \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/moment-arm-vs-knee-angle.png}
+    \end{figure}
+    }
+
+\end{frame}
+
+%\subsection{Υπολογισμός Μυϊκών Διεγέρσεων}
+\begin{frame}
+\frametitle{Μέθοδος υπολογισμού μυϊκών διεγέρσεων}
+
+    \begin{figure}[t]
+        \includegraphics[width=0.9\linewidth, keepaspectratio]{fig/cmc-diagram.png}
+    \end{figure}
+
+    \pause
+
+    \begin{equation*}
+        \overrightarrow{k}_v = 2 \cdot \sqrt{\overrightarrow{k}_p}
+    \end{equation*}
+
+    \pause
+
+    \begin{equation*}
+        \begin{gathered}
+            \underset{a}{\text{\eng{minimize}}} \sum_{i=1}^{N} a_{i}^{p} \\
+            \text{\eng{s.t.}} \quad
+            \sum_{i=1}^{N} (a_{i} \cdot f(f^{o}_{i}, l_{i}, v_{i})) \cdot  R_{ij} = \tau_{j}, \quad \forall j
+        \end{gathered}
+    \end{equation*}
+
+    \onslide<1->\let\thefootnote\relax\footnote{\hspace{-12pt}\eng{Thelen D., "Using computed muscle control to generate forward dynamic simulations of human walking from experimental data", 2006}}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Αποτέλεσμα της ορθής δυναμικής}
+
+    \only<1>{
+    \begin{figure}[t]
+        \includegraphics[width=1.0\linewidth, keepaspectratio]{fig/rf-vasint-activation.png}
+    \end{figure}
+
+    \begin{center}
+        %\href{run:video/walk-motion-capture.avi}{\includegraphics[scale=0.15]{fig/play.jpeg}}
+        \href{run:video/cmc.avi}{\includegraphics[scale=0.15]{fig/play.jpeg}}
+    \end{center}
+    }
+
+    \only<2>{
     \begin{tabular}{cc}
         \includegraphics[width=.48\textwidth, keepaspectratio]{fig/hip-ik-cmc.png} & \includegraphics[width=.48\textwidth, keepaspectratio]{fig/hip-ik-id.png}\\[3pt]
         \includegraphics[width=.48\textwidth, keepaspectratio]{fig/knee-ik-cmc.png} & \includegraphics[width=.48\textwidth, keepaspectratio]{fig/knee-ik-id.png}\\[3pt]
         \includegraphics[width=.48\textwidth, keepaspectratio]{fig/ankle-ik-cmc.png} & \includegraphics[width=.48\textwidth, keepaspectratio]{fig/ankle-ik-id.png}
     \end{tabular}
+    }
+
+\end{frame}
+
+\subsection{Ερωτήσεις}
+\begin{frame}
+\frametitle{Ερωτήσεις}
+
+\begin{center}
+    \LARGE{Ευχαριστώ για την προσοχή σας!}\\[.5cm]
+    \LARGE{Ερωτήσεις\;}
+\end{center}
 
 \end{frame}
 
