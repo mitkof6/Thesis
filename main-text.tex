@@ -39,6 +39,7 @@
 
 %Hyper reference
 \usepackage[unicode]{hyperref}
+%\addto\extrasgreek{\renewcommand\figureautorefname{Σχ.}} \autoref
 \usepackage{xcolor}
 \hypersetup{
     colorlinks,
@@ -65,6 +66,7 @@
 
 %Headings
 \usepackage{fancyhdr}
+%\usepackage[headsep=15pt]{geometry} %free from bugs \usepackage[margin=1in,headsep=.4in]{geometry}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 \pagestyle{fancy}
@@ -74,13 +76,14 @@
 \fancyhead[RE]{\itshape\nouppercase{\leftmark}}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0pt}
-\setlength{\headsep}{15pt}
+\setlength{\headsep}{15pt} %bugs
 
 %Layout
 %\usepackage{fullpage}
 %\usepackage{geometry}
 %\geometry{bindingoffset=1cm}
 %\geometry{textwidth=390pt}
+
 
 %Commands
 \newcommand{\eng}[1]{\selectlanguage{english}#1\selectlanguage{greek}}
